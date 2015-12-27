@@ -1,0 +1,167 @@
+" KEY MAPPINGS "
+
+" Workflow 
+set hidden
+"" tabs (should be changed to not conflict with till command)
+nnoremap <leader>t  :tabnext<CR>
+nnoremap <leader>T  :tabprev<CR>
+nnoremap <leader>tn  :tabnew<CR>
+nnoremap <leader>td  :tabclose<CR>
+
+" buffer managment
+nnoremap <leader>p :bp<cr>
+nnoremap <leader>n :bn<cr>
+
+"" windows
+noremap <C-h>              :wincmd h<cr>
+noremap <C-k>              :wincmd k<cr>
+noremap <C-l>              :wincmd l<cr>
+noremap <C-j>              :wincmd j<cr>
+
+" Mac only alt+M/m
+noremap Â :call MaximizeToggle()<CR>
+nnoremap µ :call MaximizeToggle()<CR>
+
+" Move windows Mac only alt/hjkl 
+noremap ˙              :wincmd H<cr>
+noremap ˚             :wincmd K<cr>
+noremap ¬              :wincmd L<cr>
+noremap ∆              :wincmd J<cr>
+
+"resize windows"
+nmap <left>  :3wincmd <<cr>
+nmap <right> :3wincmd ><cr>
+nmap <up>    :3wincmd +<cr>
+nmap <down>  :3wincmd -<cr>
+map <C-m> :tabedit %<CR> 
+
+"Map escape key to jj -- much faster
+imap jj <esc>
+imap kk <esc>
+
+" search
+nnoremap <leader>/ :Ag<SPACE>
+nnoremap <leader>f :Ag <cword><CR>
+
+" GENERAL "
+colorscheme blazer
+set background=dark
+
+" Key mappings "
+" space + w closes buffer
+nnoremap <leader>w :bw<CR>
+" space + q closes all
+nnoremap <leader>q :qa<CR>
+" closing aliases "
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
+" Vim airline
+set laststatus=2
+
+" toggle the C tagbar
+nmap <F9> :TagbarToggle<CR>
+
+" Multiple cursors
+" Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" CTRL+P "
+let g:ctrlp_map = '<c-p>'
+"" ctrlp exclude
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v\.(git|hg|svn|orig)$|\vtmp|\vdoc|\vcoverage|\vtags',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': '',
+  \ }
+
+" easy motion
+let g:EasyMotion_smartcase = 1 " case insensitive matching
+let g:EasyMotion_use_smartsign_us = 1 " match 3 and # 
+map / <Plug>(easymotion-sn)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+
+" indent highlight activated with <leader>ig
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0 guifg=#4F504B guibg=#3C3D38
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0 guifg=#3C3D38 guibg=#4F504B
+
+" emmet "
+let g:user_emmet_leader_key='<C-Y>'
+let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" Undo Tree "
+nnoremap <leader>ut :UndotreeToggle<cr>
+
+" "
+" SURROUND "
+" use cs"[  remember with change surrounding from " to [
+
+" Syntastic "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+
+" Python "
+let g:pymode_rope_goto_definition_bind = "<leader>pgd"
+let g:pymode_run_bind = "<leader>pr"
+let g:pymode_doc_bind = "<leader>pd"
+
+" GO "
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gt <Plug>(go-test)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" markdown "
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" JS "
+" for beautify use <leader>sb"
+" sourcetype that support by this plugin
+
+" jquery "
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery 
+
+" json "
+au BufRead,BufNewFile *.json setf json
+
+" FUNCTIONS
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction

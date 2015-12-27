@@ -1,0 +1,1315 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/mm/.nvm/v0.11.0/bin/node',
+1 verbose cli   '/Users/mm/.nvm/v0.11.0/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   '-g',
+1 verbose cli   'yo' ]
+2 info using npm@1.2.15
+3 info using node@v0.11.0
+4 verbose read json /Users/mm/.nvm/v0.11.0/lib/package.json
+5 verbose read json /Users/mm/.nvm/v0.11.0/lib/package.json
+6 verbose cache add [ 'yo', null ]
+7 verbose cache add name=undefined spec="yo" args=["yo",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'yo',
+8 verbose parsed url   path: 'yo',
+8 verbose parsed url   href: 'yo' }
+9 silly lockFile c41975d1-yo yo
+10 verbose lock yo /Users/mm/.npm/c41975d1-yo.lock
+11 silly lockFile c41975d1-yo yo
+12 silly lockFile c41975d1-yo yo
+13 verbose addNamed [ 'yo', '' ]
+14 verbose addNamed [ null, '' ]
+15 silly lockFile d937c28e-yo yo@
+16 verbose lock yo@ /Users/mm/.npm/d937c28e-yo.lock
+17 silly addNameRange { name: 'yo', range: '', hasData: false }
+18 verbose url raw yo
+19 verbose url resolving [ 'https://registry.npmjs.org/', './yo' ]
+20 verbose url resolved https://registry.npmjs.org/yo
+21 info trying registry request attempt 1 at 03:30:55
+22 http GET https://registry.npmjs.org/yo
+23 http 200 https://registry.npmjs.org/yo
+24 silly registry.get cb [ 200,
+24 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly registry.get     etag: '"33R4G0NH8B0NE5Q9LBR65B1P1"',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'cache-control': 'max-age=300',
+24 silly registry.get     'content-length': '41988',
+24 silly registry.get     'accept-ranges': 'bytes',
+24 silly registry.get     date: 'Sun, 27 Dec 2015 01:30:56 GMT',
+24 silly registry.get     via: '1.1 varnish',
+24 silly registry.get     age: '0',
+24 silly registry.get     connection: 'keep-alive',
+24 silly registry.get     'x-served-by': 'cache-fra1223-FRA',
+24 silly registry.get     'x-cache': 'HIT',
+24 silly registry.get     'x-cache-hits': '1',
+24 silly registry.get     'x-timer': 'S1451179856.014244,VS0,VE772',
+24 silly registry.get     vary: 'Accept' } ]
+25 silly addNameRange number 2 { name: 'yo', range: '', hasData: true }
+26 silly addNameRange versions [ 'yo',
+26 silly addNameRange   [ '1.1.0',
+26 silly addNameRange     '1.1.1',
+26 silly addNameRange     '1.1.2',
+26 silly addNameRange     '1.4.6',
+26 silly addNameRange     '1.4.7',
+26 silly addNameRange     '1.4.8',
+26 silly addNameRange     '1.5.0',
+26 silly addNameRange     '1.5.1' ] ]
+27 verbose addNamed [ 'yo', '1.5.1' ]
+28 verbose addNamed [ '1.5.1', '1.5.1' ]
+29 silly lockFile 5e815234-yo-1-5-1 yo@1.5.1
+30 verbose lock yo@1.5.1 /Users/mm/.npm/5e815234-yo-1-5-1.lock
+31 silly lockFile 816a3bc2-gistry-npmjs-org-yo-yo-1-5-1-tgz https://registry.npmjs.org/yo/-/yo-1.5.1.tgz
+32 verbose lock https://registry.npmjs.org/yo/-/yo-1.5.1.tgz /Users/mm/.npm/816a3bc2-gistry-npmjs-org-yo-yo-1-5-1-tgz.lock
+33 verbose addRemoteTarball [ 'https://registry.npmjs.org/yo/-/yo-1.5.1.tgz',
+33 verbose addRemoteTarball   '5b21b5044d9a4828732e9b6845a463d761c80479' ]
+34 info retry fetch attempt 1 at 03:30:57
+35 verbose fetch to= /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+36 http GET https://registry.npmjs.org/yo/-/yo-1.5.1.tgz
+37 http 200 https://registry.npmjs.org/yo/-/yo-1.5.1.tgz
+38 silly shasum updated bytes 8567
+39 info shasum 5b21b5044d9a4828732e9b6845a463d761c80479
+39 info shasum /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+40 verbose tar unpack /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+41 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+42 verbose lock /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package /Users/mm/.npm/268fe863-57079-0-5796044084709138-package.lock
+43 silly lockFile e88a71d2-57079-0-5796044084709138-tmp-tgz /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+44 verbose lock /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz /Users/mm/.npm/e88a71d2-57079-0-5796044084709138-tmp-tgz.lock
+45 silly gunzTarPerm modes [ '755', '644' ]
+46 silly gunzTarPerm extractEntry package.json
+47 silly gunzTarPerm extractEntry lib/cli.js
+48 silly gunzTarPerm extractEntry lib/router.js
+49 silly gunzTarPerm extractEntry lib/routes/clear-config.js
+50 silly gunzTarPerm extractEntry lib/routes/exit.js
+51 silly gunzTarPerm extractEntry lib/routes/help.js
+52 silly gunzTarPerm extractEntry lib/routes/home.js
+53 silly gunzTarPerm extractEntry lib/routes/install.js
+54 silly gunzTarPerm extractEntry lib/routes/run.js
+55 silly gunzTarPerm extractEntry lib/routes/update.js
+56 silly gunzTarPerm extractEntry lib/usage.txt
+57 silly gunzTarPerm extractEntry lib/utils/global-config.js
+58 silly gunzTarPerm extractEntry readme.md
+59 verbose read json /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package/package.json
+60 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+61 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+62 silly lockFile e88a71d2-57079-0-5796044084709138-tmp-tgz /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+63 silly lockFile e88a71d2-57079-0-5796044084709138-tmp-tgz /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/tmp.tgz
+64 verbose from cache /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package/package.json
+65 verbose tar pack [ '/Users/mm/.npm/yo/1.5.1/package.tgz',
+65 verbose tar pack   '/var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package' ]
+66 verbose tarball /Users/mm/.npm/yo/1.5.1/package.tgz
+67 verbose folder /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+68 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+69 verbose lock /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package /Users/mm/.npm/268fe863-57079-0-5796044084709138-package.lock
+70 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+71 verbose lock /Users/mm/.npm/yo/1.5.1/package.tgz /Users/mm/.npm/9639f2db-sers-mm-npm-yo-1-5-1-package-tgz.lock
+72 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+73 silly lockFile 268fe863-57079-0-5796044084709138-package /var/folders/73/2jpdj5f931b10hcwtr1nc44w0000gn/T/npm-68175/1451179857079-0.5796044084709138/package
+74 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+75 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+76 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+77 verbose lock /Users/mm/.npm/yo/1.5.1/package /Users/mm/.npm/fe815322-Users-mm-npm-yo-1-5-1-package.lock
+78 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+79 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+80 verbose tar unpack /Users/mm/.npm/yo/1.5.1/package.tgz
+81 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+82 verbose lock /Users/mm/.npm/yo/1.5.1/package /Users/mm/.npm/fe815322-Users-mm-npm-yo-1-5-1-package.lock
+83 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+84 verbose lock /Users/mm/.npm/yo/1.5.1/package.tgz /Users/mm/.npm/9639f2db-sers-mm-npm-yo-1-5-1-package-tgz.lock
+85 silly gunzTarPerm modes [ '755', '644' ]
+86 silly gunzTarPerm extractEntry package.json
+87 silly gunzTarPerm extractEntry lib/cli.js
+88 silly gunzTarPerm extractEntry lib/router.js
+89 silly gunzTarPerm extractEntry lib/routes/clear-config.js
+90 silly gunzTarPerm extractEntry lib/routes/exit.js
+91 silly gunzTarPerm extractEntry lib/routes/help.js
+92 silly gunzTarPerm extractEntry lib/routes/home.js
+93 silly gunzTarPerm extractEntry lib/routes/install.js
+94 silly gunzTarPerm extractEntry lib/routes/run.js
+95 silly gunzTarPerm extractEntry lib/routes/update.js
+96 silly gunzTarPerm extractEntry lib/usage.txt
+97 silly gunzTarPerm extractEntry lib/utils/global-config.js
+98 silly gunzTarPerm extractEntry readme.md
+99 verbose read json /Users/mm/.npm/yo/1.5.1/package/package.json
+100 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+101 silly lockFile fe815322-Users-mm-npm-yo-1-5-1-package /Users/mm/.npm/yo/1.5.1/package
+102 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+103 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+104 silly shasum updated bytes 8567
+105 info shasum 5b21b5044d9a4828732e9b6845a463d761c80479
+105 info shasum /Users/mm/.npm/yo/1.5.1/package.tgz
+106 verbose from cache /Users/mm/.npm/yo/1.5.1/package/package.json
+107 verbose chmod /Users/mm/.npm/yo/1.5.1/package.tgz 644
+108 verbose chown /Users/mm/.npm/yo/1.5.1/package.tgz [ 501, 20 ]
+109 silly lockFile 816a3bc2-gistry-npmjs-org-yo-yo-1-5-1-tgz https://registry.npmjs.org/yo/-/yo-1.5.1.tgz
+110 silly lockFile 816a3bc2-gistry-npmjs-org-yo-yo-1-5-1-tgz https://registry.npmjs.org/yo/-/yo-1.5.1.tgz
+111 silly lockFile 5e815234-yo-1-5-1 yo@1.5.1
+112 silly lockFile 5e815234-yo-1-5-1 yo@1.5.1
+113 silly lockFile d937c28e-yo yo@
+114 silly lockFile d937c28e-yo yo@
+115 silly resolved [ { name: 'yo',
+115 silly resolved     version: '1.5.1',
+115 silly resolved     description: 'CLI tool for running Yeoman generators',
+115 silly resolved     license: 'BSD-2-Clause',
+115 silly resolved     repository: { type: 'git', url: 'yeoman/yo' },
+115 silly resolved     author: { name: 'Yeoman' },
+115 silly resolved     bin: { yo: 'lib/cli.js' },
+115 silly resolved     engines: { node: '>=0.12.0' },
+115 silly resolved     scripts:
+115 silly resolved      { test: 'xo && mocha test/**/*.js',
+115 silly resolved        postinstall: 'yodoctor',
+115 silly resolved        postupdate: 'yodoctor',
+115 silly resolved        prepublish: 'nsp check' },
+115 silly resolved     files: [ 'lib' ],
+115 silly resolved     keywords:
+115 silly resolved      [ 'cli-app',
+115 silly resolved        'cli',
+115 silly resolved        'front-end',
+115 silly resolved        'development',
+115 silly resolved        'dev',
+115 silly resolved        'build',
+115 silly resolved        'web',
+115 silly resolved        'tool',
+115 silly resolved        'scaffold',
+115 silly resolved        'stack',
+115 silly resolved        'yeoman',
+115 silly resolved        'generator',
+115 silly resolved        'generate',
+115 silly resolved        'app',
+115 silly resolved        'boilerplate' ],
+115 silly resolved     dependencies:
+115 silly resolved      { async: '^1.0.0',
+115 silly resolved        chalk: '^1.0.0',
+115 silly resolved        configstore: '^1.0.0',
+115 silly resolved        'cross-spawn-async': '^2.0.0',
+115 silly resolved        figures: '^1.3.5',
+115 silly resolved        fullname: '^2.0.0',
+115 silly resolved        got: '^5.0.0',
+115 silly resolved        'humanize-string': '^1.0.0',
+115 silly resolved        inquirer: '^0.11.0',
+115 silly resolved        insight: '^0.7.0',
+115 silly resolved        lodash: '^3.2.0',
+115 silly resolved        meow: '^3.0.0',
+115 silly resolved        'npm-keyword': '^4.1.0',
+115 silly resolved        opn: '^3.0.2',
+115 silly resolved        'package-json': '^2.1.0',
+115 silly resolved        'read-pkg-up': '^1.0.1',
+115 silly resolved        repeating: '^2.0.0',
+115 silly resolved        'root-check': '^1.0.0',
+115 silly resolved        'sort-on': '^1.0.0',
+115 silly resolved        'string-length': '^1.0.0',
+115 silly resolved        titleize: '^1.0.0',
+115 silly resolved        'update-notifier': '^0.5.0',
+115 silly resolved        'user-home': '^2.0.0',
+115 silly resolved        'yeoman-character': '^1.0.0',
+115 silly resolved        'yeoman-doctor': '^2.0.0',
+115 silly resolved        'yeoman-environment': '^1.2.7',
+115 silly resolved        yosay: '^1.0.0' },
+115 silly resolved     devDependencies:
+115 silly resolved      { mocha: '^2.1.0',
+115 silly resolved        mockery: '^1.4.0',
+115 silly resolved        nock: '^2.0.1',
+115 silly resolved        nsp: '^2.2.0',
+115 silly resolved        proxyquire: '^1.0.1',
+115 silly resolved        'registry-url': '^3.0.0',
+115 silly resolved        sinon: '^1.12.1',
+115 silly resolved        xo: '*' },
+115 silly resolved     xo: { space: true, envs: [Object] },
+115 silly resolved     readme: '# yo [![Build Status](https://travis-ci.org/yeoman/yo.svg?branch=master)](https://travis-ci.org/yeoman/yo) [![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4)\n\n[![](https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-masthead.png)](http://yeoman.io)\n\n<img src="screenshot.png" width="569">\n\n\n## What\'s Yeoman?\n\nYeoman helps you to kickstart new projects, prescribing best practices and tools to help you stay productive.\n\nTo do so, we provide a [generator ecosystem](http://yeoman.io/generators/). A generator is basically a plugin that can be run with the `yo` command to scaffold complete projects or useful parts.\n\n\n## Usage\n\n```sh\n# install yo\nnpm install --global yo\n\n# install a generator\nnpm install --global generator-webapp\n\n# run it\nyo webapp\n```\n\n*To create and distribute your own generator, refer to [our official documentation](http://yeoman.io/authoring/)*\n\n\n## Options\n\n- `--no-color` - Disable colors.\n- `--version` - Print the current `yo` version.\n- `--help` - Print `yo` help menu with the list of found generators.\n- `--[no-]insight` - Toggle anonymous [Insight](https://github.com/yeoman/insight) tracking which helps us improve Yeoman. Using either of these flags on the first run will prevent you from being prompted about it interactively. The flags can also be used to change it later on.\n- `--generators` - Print available generators.\n\n\n## Troubleshooting\n\nRunning `yo doctor` command can help you troubleshoot common issues.\n\nIf `doctor` doesn\'t help, then check opened issues for a similar problem. Open a new issue if your problem haven\'t been reported yet. Make sure to always include the version of `yo` (`yo --version`) and Node.js (`node --version`) you use.\n\nIf your issue only occurs using a generator, please report the issues on the generator\'s repository.\n\n\n## Contribute\n\nSee the [contributing docs](http://yeoman.io/contributing/).\n\n\n## Changelog\n\nSee the [release page](https://github.com/yeoman/yo/releases).\n\n\n## License\n\nBSD-2-Clause © Google\n',
+115 silly resolved     readmeFilename: 'readme.md',
+115 silly resolved     _id: 'yo@1.5.1',
+115 silly resolved     dist: { shasum: '5b21b5044d9a4828732e9b6845a463d761c80479' },
+115 silly resolved     _from: 'yo@',
+115 silly resolved     _resolved: 'https://registry.npmjs.org/yo/-/yo-1.5.1.tgz' } ]
+116 info install yo@1.5.1 into /Users/mm/.nvm/v0.11.0/lib
+117 info installOne yo@1.5.1
+118 warn engine yo@1.5.1: wanted: {"node":">=0.12.0"} (current: {"node":"v0.11.0","npm":"1.2.15"})
+119 verbose from cache /Users/mm/.npm/yo/1.5.1/package/package.json
+120 info /Users/mm/.nvm/v0.11.0/lib/node_modules/yo unbuild
+121 verbose read json /Users/mm/.nvm/v0.11.0/lib/node_modules/yo/package.json
+122 verbose tar unpack /Users/mm/.npm/yo/1.5.1/package.tgz
+123 silly lockFile d7e07910--nvm-v0-11-0-lib-node-modules-yo /Users/mm/.nvm/v0.11.0/lib/node_modules/yo
+124 verbose lock /Users/mm/.nvm/v0.11.0/lib/node_modules/yo /Users/mm/.npm/d7e07910--nvm-v0-11-0-lib-node-modules-yo.lock
+125 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+126 verbose lock /Users/mm/.npm/yo/1.5.1/package.tgz /Users/mm/.npm/9639f2db-sers-mm-npm-yo-1-5-1-package-tgz.lock
+127 silly gunzTarPerm modes [ '755', '644' ]
+128 silly gunzTarPerm extractEntry package.json
+129 silly gunzTarPerm extractEntry lib/cli.js
+130 silly gunzTarPerm extractEntry lib/router.js
+131 silly gunzTarPerm extractEntry lib/routes/clear-config.js
+132 silly gunzTarPerm extractEntry lib/routes/exit.js
+133 silly gunzTarPerm extractEntry lib/routes/help.js
+134 silly gunzTarPerm extractEntry lib/routes/home.js
+135 silly gunzTarPerm extractEntry lib/routes/install.js
+136 silly gunzTarPerm extractEntry lib/routes/run.js
+137 silly gunzTarPerm extractEntry lib/routes/update.js
+138 silly gunzTarPerm extractEntry lib/usage.txt
+139 silly gunzTarPerm extractEntry lib/utils/global-config.js
+140 silly gunzTarPerm extractEntry readme.md
+141 verbose read json /Users/mm/.nvm/v0.11.0/lib/node_modules/yo/package.json
+142 silly lockFile d7e07910--nvm-v0-11-0-lib-node-modules-yo /Users/mm/.nvm/v0.11.0/lib/node_modules/yo
+143 silly lockFile d7e07910--nvm-v0-11-0-lib-node-modules-yo /Users/mm/.nvm/v0.11.0/lib/node_modules/yo
+144 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+145 silly lockFile 9639f2db-sers-mm-npm-yo-1-5-1-package-tgz /Users/mm/.npm/yo/1.5.1/package.tgz
+146 info preinstall yo@1.5.1
+147 verbose from cache /Users/mm/.nvm/v0.11.0/lib/node_modules/yo/package.json
+148 verbose readDependencies using package.json deps
+149 verbose from cache /Users/mm/.nvm/v0.11.0/lib/node_modules/yo/package.json
+150 verbose readDependencies using package.json deps
+151 verbose cache add [ 'configstore@^1.0.0', null ]
+152 verbose cache add name=undefined spec="configstore@^1.0.0" args=["configstore@^1.0.0",null]
+153 verbose parsed url { protocol: null,
+153 verbose parsed url   slashes: null,
+153 verbose parsed url   auth: null,
+153 verbose parsed url   host: null,
+153 verbose parsed url   port: null,
+153 verbose parsed url   hostname: null,
+153 verbose parsed url   hash: null,
+153 verbose parsed url   search: null,
+153 verbose parsed url   query: null,
+153 verbose parsed url   pathname: 'configstore@^1.0.0',
+153 verbose parsed url   path: 'configstore@^1.0.0',
+153 verbose parsed url   href: 'configstore@^1.0.0' }
+154 verbose cache add name="configstore" spec="^1.0.0" args=["configstore","^1.0.0"]
+155 verbose parsed url { protocol: null,
+155 verbose parsed url   slashes: null,
+155 verbose parsed url   auth: null,
+155 verbose parsed url   host: null,
+155 verbose parsed url   port: null,
+155 verbose parsed url   hostname: null,
+155 verbose parsed url   hash: null,
+155 verbose parsed url   search: null,
+155 verbose parsed url   query: null,
+155 verbose parsed url   pathname: '^1.0.0',
+155 verbose parsed url   path: '^1.0.0',
+155 verbose parsed url   href: '^1.0.0' }
+156 verbose addNamed [ 'configstore', '^1.0.0' ]
+157 verbose addNamed [ null, null ]
+158 silly lockFile 6cd2b0a9-configstore-1-0-0 configstore@^1.0.0
+159 verbose lock configstore@^1.0.0 /Users/mm/.npm/6cd2b0a9-configstore-1-0-0.lock
+160 verbose cache add [ 'cross-spawn-async@^2.0.0', null ]
+161 verbose cache add name=undefined spec="cross-spawn-async@^2.0.0" args=["cross-spawn-async@^2.0.0",null]
+162 verbose parsed url { protocol: null,
+162 verbose parsed url   slashes: null,
+162 verbose parsed url   auth: null,
+162 verbose parsed url   host: null,
+162 verbose parsed url   port: null,
+162 verbose parsed url   hostname: null,
+162 verbose parsed url   hash: null,
+162 verbose parsed url   search: null,
+162 verbose parsed url   query: null,
+162 verbose parsed url   pathname: 'cross-spawn-async@^2.0.0',
+162 verbose parsed url   path: 'cross-spawn-async@^2.0.0',
+162 verbose parsed url   href: 'cross-spawn-async@^2.0.0' }
+163 verbose cache add name="cross-spawn-async" spec="^2.0.0" args=["cross-spawn-async","^2.0.0"]
+164 verbose parsed url { protocol: null,
+164 verbose parsed url   slashes: null,
+164 verbose parsed url   auth: null,
+164 verbose parsed url   host: null,
+164 verbose parsed url   port: null,
+164 verbose parsed url   hostname: null,
+164 verbose parsed url   hash: null,
+164 verbose parsed url   search: null,
+164 verbose parsed url   query: null,
+164 verbose parsed url   pathname: '^2.0.0',
+164 verbose parsed url   path: '^2.0.0',
+164 verbose parsed url   href: '^2.0.0' }
+165 verbose addNamed [ 'cross-spawn-async', '^2.0.0' ]
+166 verbose addNamed [ null, null ]
+167 silly lockFile 7318eeb5-cross-spawn-async-2-0-0 cross-spawn-async@^2.0.0
+168 verbose lock cross-spawn-async@^2.0.0 /Users/mm/.npm/7318eeb5-cross-spawn-async-2-0-0.lock
+169 info addNameTag [ 'configstore', '^1.0.0' ]
+170 verbose cache add [ 'figures@^1.3.5', null ]
+171 verbose cache add name=undefined spec="figures@^1.3.5" args=["figures@^1.3.5",null]
+172 verbose parsed url { protocol: null,
+172 verbose parsed url   slashes: null,
+172 verbose parsed url   auth: null,
+172 verbose parsed url   host: null,
+172 verbose parsed url   port: null,
+172 verbose parsed url   hostname: null,
+172 verbose parsed url   hash: null,
+172 verbose parsed url   search: null,
+172 verbose parsed url   query: null,
+172 verbose parsed url   pathname: 'figures@^1.3.5',
+172 verbose parsed url   path: 'figures@^1.3.5',
+172 verbose parsed url   href: 'figures@^1.3.5' }
+173 verbose cache add name="figures" spec="^1.3.5" args=["figures","^1.3.5"]
+174 verbose parsed url { protocol: null,
+174 verbose parsed url   slashes: null,
+174 verbose parsed url   auth: null,
+174 verbose parsed url   host: null,
+174 verbose parsed url   port: null,
+174 verbose parsed url   hostname: null,
+174 verbose parsed url   hash: null,
+174 verbose parsed url   search: null,
+174 verbose parsed url   query: null,
+174 verbose parsed url   pathname: '^1.3.5',
+174 verbose parsed url   path: '^1.3.5',
+174 verbose parsed url   href: '^1.3.5' }
+175 verbose addNamed [ 'figures', '^1.3.5' ]
+176 verbose addNamed [ null, null ]
+177 silly lockFile e860dedd-figures-1-3-5 figures@^1.3.5
+178 verbose lock figures@^1.3.5 /Users/mm/.npm/e860dedd-figures-1-3-5.lock
+179 info addNameTag [ 'cross-spawn-async', '^2.0.0' ]
+180 verbose url raw configstore
+181 verbose url resolving [ 'https://registry.npmjs.org/', './configstore' ]
+182 verbose url resolved https://registry.npmjs.org/configstore
+183 info trying registry request attempt 1 at 03:30:57
+184 http GET https://registry.npmjs.org/configstore
+185 verbose cache add [ 'fullname@^2.0.0', null ]
+186 verbose cache add name=undefined spec="fullname@^2.0.0" args=["fullname@^2.0.0",null]
+187 verbose parsed url { protocol: null,
+187 verbose parsed url   slashes: null,
+187 verbose parsed url   auth: null,
+187 verbose parsed url   host: null,
+187 verbose parsed url   port: null,
+187 verbose parsed url   hostname: null,
+187 verbose parsed url   hash: null,
+187 verbose parsed url   search: null,
+187 verbose parsed url   query: null,
+187 verbose parsed url   pathname: 'fullname@^2.0.0',
+187 verbose parsed url   path: 'fullname@^2.0.0',
+187 verbose parsed url   href: 'fullname@^2.0.0' }
+188 verbose cache add name="fullname" spec="^2.0.0" args=["fullname","^2.0.0"]
+189 verbose parsed url { protocol: null,
+189 verbose parsed url   slashes: null,
+189 verbose parsed url   auth: null,
+189 verbose parsed url   host: null,
+189 verbose parsed url   port: null,
+189 verbose parsed url   hostname: null,
+189 verbose parsed url   hash: null,
+189 verbose parsed url   search: null,
+189 verbose parsed url   query: null,
+189 verbose parsed url   pathname: '^2.0.0',
+189 verbose parsed url   path: '^2.0.0',
+189 verbose parsed url   href: '^2.0.0' }
+190 verbose addNamed [ 'fullname', '^2.0.0' ]
+191 verbose addNamed [ null, null ]
+192 silly lockFile 4bf1287c-fullname-2-0-0 fullname@^2.0.0
+193 verbose lock fullname@^2.0.0 /Users/mm/.npm/4bf1287c-fullname-2-0-0.lock
+194 verbose cache add [ 'got@^5.0.0', null ]
+195 verbose cache add name=undefined spec="got@^5.0.0" args=["got@^5.0.0",null]
+196 verbose parsed url { protocol: null,
+196 verbose parsed url   slashes: null,
+196 verbose parsed url   auth: null,
+196 verbose parsed url   host: null,
+196 verbose parsed url   port: null,
+196 verbose parsed url   hostname: null,
+196 verbose parsed url   hash: null,
+196 verbose parsed url   search: null,
+196 verbose parsed url   query: null,
+196 verbose parsed url   pathname: 'got@^5.0.0',
+196 verbose parsed url   path: 'got@^5.0.0',
+196 verbose parsed url   href: 'got@^5.0.0' }
+197 verbose cache add name="got" spec="^5.0.0" args=["got","^5.0.0"]
+198 verbose parsed url { protocol: null,
+198 verbose parsed url   slashes: null,
+198 verbose parsed url   auth: null,
+198 verbose parsed url   host: null,
+198 verbose parsed url   port: null,
+198 verbose parsed url   hostname: null,
+198 verbose parsed url   hash: null,
+198 verbose parsed url   search: null,
+198 verbose parsed url   query: null,
+198 verbose parsed url   pathname: '^5.0.0',
+198 verbose parsed url   path: '^5.0.0',
+198 verbose parsed url   href: '^5.0.0' }
+199 verbose addNamed [ 'got', '^5.0.0' ]
+200 verbose addNamed [ null, null ]
+201 silly lockFile 89ff75f4-got-5-0-0 got@^5.0.0
+202 verbose lock got@^5.0.0 /Users/mm/.npm/89ff75f4-got-5-0-0.lock
+203 verbose cache add [ 'humanize-string@^1.0.0', null ]
+204 verbose cache add name=undefined spec="humanize-string@^1.0.0" args=["humanize-string@^1.0.0",null]
+205 verbose parsed url { protocol: null,
+205 verbose parsed url   slashes: null,
+205 verbose parsed url   auth: null,
+205 verbose parsed url   host: null,
+205 verbose parsed url   port: null,
+205 verbose parsed url   hostname: null,
+205 verbose parsed url   hash: null,
+205 verbose parsed url   search: null,
+205 verbose parsed url   query: null,
+205 verbose parsed url   pathname: 'humanize-string@^1.0.0',
+205 verbose parsed url   path: 'humanize-string@^1.0.0',
+205 verbose parsed url   href: 'humanize-string@^1.0.0' }
+206 verbose cache add name="humanize-string" spec="^1.0.0" args=["humanize-string","^1.0.0"]
+207 verbose parsed url { protocol: null,
+207 verbose parsed url   slashes: null,
+207 verbose parsed url   auth: null,
+207 verbose parsed url   host: null,
+207 verbose parsed url   port: null,
+207 verbose parsed url   hostname: null,
+207 verbose parsed url   hash: null,
+207 verbose parsed url   search: null,
+207 verbose parsed url   query: null,
+207 verbose parsed url   pathname: '^1.0.0',
+207 verbose parsed url   path: '^1.0.0',
+207 verbose parsed url   href: '^1.0.0' }
+208 verbose addNamed [ 'humanize-string', '^1.0.0' ]
+209 verbose addNamed [ null, null ]
+210 silly lockFile cc12e66c-humanize-string-1-0-0 humanize-string@^1.0.0
+211 verbose lock humanize-string@^1.0.0 /Users/mm/.npm/cc12e66c-humanize-string-1-0-0.lock
+212 verbose cache add [ 'inquirer@^0.11.0', null ]
+213 verbose cache add name=undefined spec="inquirer@^0.11.0" args=["inquirer@^0.11.0",null]
+214 verbose parsed url { protocol: null,
+214 verbose parsed url   slashes: null,
+214 verbose parsed url   auth: null,
+214 verbose parsed url   host: null,
+214 verbose parsed url   port: null,
+214 verbose parsed url   hostname: null,
+214 verbose parsed url   hash: null,
+214 verbose parsed url   search: null,
+214 verbose parsed url   query: null,
+214 verbose parsed url   pathname: 'inquirer@^0.11.0',
+214 verbose parsed url   path: 'inquirer@^0.11.0',
+214 verbose parsed url   href: 'inquirer@^0.11.0' }
+215 verbose cache add name="inquirer" spec="^0.11.0" args=["inquirer","^0.11.0"]
+216 verbose parsed url { protocol: null,
+216 verbose parsed url   slashes: null,
+216 verbose parsed url   auth: null,
+216 verbose parsed url   host: null,
+216 verbose parsed url   port: null,
+216 verbose parsed url   hostname: null,
+216 verbose parsed url   hash: null,
+216 verbose parsed url   search: null,
+216 verbose parsed url   query: null,
+216 verbose parsed url   pathname: '^0.11.0',
+216 verbose parsed url   path: '^0.11.0',
+216 verbose parsed url   href: '^0.11.0' }
+217 verbose addNamed [ 'inquirer', '^0.11.0' ]
+218 verbose addNamed [ null, null ]
+219 silly lockFile 8bf5bb5a-inquirer-0-11-0 inquirer@^0.11.0
+220 verbose lock inquirer@^0.11.0 /Users/mm/.npm/8bf5bb5a-inquirer-0-11-0.lock
+221 verbose cache add [ 'insight@^0.7.0', null ]
+222 verbose cache add name=undefined spec="insight@^0.7.0" args=["insight@^0.7.0",null]
+223 verbose parsed url { protocol: null,
+223 verbose parsed url   slashes: null,
+223 verbose parsed url   auth: null,
+223 verbose parsed url   host: null,
+223 verbose parsed url   port: null,
+223 verbose parsed url   hostname: null,
+223 verbose parsed url   hash: null,
+223 verbose parsed url   search: null,
+223 verbose parsed url   query: null,
+223 verbose parsed url   pathname: 'insight@^0.7.0',
+223 verbose parsed url   path: 'insight@^0.7.0',
+223 verbose parsed url   href: 'insight@^0.7.0' }
+224 verbose cache add name="insight" spec="^0.7.0" args=["insight","^0.7.0"]
+225 verbose parsed url { protocol: null,
+225 verbose parsed url   slashes: null,
+225 verbose parsed url   auth: null,
+225 verbose parsed url   host: null,
+225 verbose parsed url   port: null,
+225 verbose parsed url   hostname: null,
+225 verbose parsed url   hash: null,
+225 verbose parsed url   search: null,
+225 verbose parsed url   query: null,
+225 verbose parsed url   pathname: '^0.7.0',
+225 verbose parsed url   path: '^0.7.0',
+225 verbose parsed url   href: '^0.7.0' }
+226 verbose addNamed [ 'insight', '^0.7.0' ]
+227 verbose addNamed [ null, null ]
+228 silly lockFile 79c83a65-insight-0-7-0 insight@^0.7.0
+229 verbose lock insight@^0.7.0 /Users/mm/.npm/79c83a65-insight-0-7-0.lock
+230 verbose cache add [ 'lodash@^3.2.0', null ]
+231 verbose cache add name=undefined spec="lodash@^3.2.0" args=["lodash@^3.2.0",null]
+232 verbose parsed url { protocol: null,
+232 verbose parsed url   slashes: null,
+232 verbose parsed url   auth: null,
+232 verbose parsed url   host: null,
+232 verbose parsed url   port: null,
+232 verbose parsed url   hostname: null,
+232 verbose parsed url   hash: null,
+232 verbose parsed url   search: null,
+232 verbose parsed url   query: null,
+232 verbose parsed url   pathname: 'lodash@^3.2.0',
+232 verbose parsed url   path: 'lodash@^3.2.0',
+232 verbose parsed url   href: 'lodash@^3.2.0' }
+233 verbose cache add name="lodash" spec="^3.2.0" args=["lodash","^3.2.0"]
+234 verbose parsed url { protocol: null,
+234 verbose parsed url   slashes: null,
+234 verbose parsed url   auth: null,
+234 verbose parsed url   host: null,
+234 verbose parsed url   port: null,
+234 verbose parsed url   hostname: null,
+234 verbose parsed url   hash: null,
+234 verbose parsed url   search: null,
+234 verbose parsed url   query: null,
+234 verbose parsed url   pathname: '^3.2.0',
+234 verbose parsed url   path: '^3.2.0',
+234 verbose parsed url   href: '^3.2.0' }
+235 verbose addNamed [ 'lodash', '^3.2.0' ]
+236 verbose addNamed [ null, null ]
+237 silly lockFile 269be3cd-lodash-3-2-0 lodash@^3.2.0
+238 verbose lock lodash@^3.2.0 /Users/mm/.npm/269be3cd-lodash-3-2-0.lock
+239 verbose cache add [ 'meow@^3.0.0', null ]
+240 verbose cache add name=undefined spec="meow@^3.0.0" args=["meow@^3.0.0",null]
+241 verbose parsed url { protocol: null,
+241 verbose parsed url   slashes: null,
+241 verbose parsed url   auth: null,
+241 verbose parsed url   host: null,
+241 verbose parsed url   port: null,
+241 verbose parsed url   hostname: null,
+241 verbose parsed url   hash: null,
+241 verbose parsed url   search: null,
+241 verbose parsed url   query: null,
+241 verbose parsed url   pathname: 'meow@^3.0.0',
+241 verbose parsed url   path: 'meow@^3.0.0',
+241 verbose parsed url   href: 'meow@^3.0.0' }
+242 verbose cache add name="meow" spec="^3.0.0" args=["meow","^3.0.0"]
+243 verbose parsed url { protocol: null,
+243 verbose parsed url   slashes: null,
+243 verbose parsed url   auth: null,
+243 verbose parsed url   host: null,
+243 verbose parsed url   port: null,
+243 verbose parsed url   hostname: null,
+243 verbose parsed url   hash: null,
+243 verbose parsed url   search: null,
+243 verbose parsed url   query: null,
+243 verbose parsed url   pathname: '^3.0.0',
+243 verbose parsed url   path: '^3.0.0',
+243 verbose parsed url   href: '^3.0.0' }
+244 verbose addNamed [ 'meow', '^3.0.0' ]
+245 verbose addNamed [ null, null ]
+246 silly lockFile c31da25e-meow-3-0-0 meow@^3.0.0
+247 verbose lock meow@^3.0.0 /Users/mm/.npm/c31da25e-meow-3-0-0.lock
+248 verbose cache add [ 'npm-keyword@^4.1.0', null ]
+249 verbose cache add name=undefined spec="npm-keyword@^4.1.0" args=["npm-keyword@^4.1.0",null]
+250 verbose parsed url { protocol: null,
+250 verbose parsed url   slashes: null,
+250 verbose parsed url   auth: null,
+250 verbose parsed url   host: null,
+250 verbose parsed url   port: null,
+250 verbose parsed url   hostname: null,
+250 verbose parsed url   hash: null,
+250 verbose parsed url   search: null,
+250 verbose parsed url   query: null,
+250 verbose parsed url   pathname: 'npm-keyword@^4.1.0',
+250 verbose parsed url   path: 'npm-keyword@^4.1.0',
+250 verbose parsed url   href: 'npm-keyword@^4.1.0' }
+251 verbose cache add name="npm-keyword" spec="^4.1.0" args=["npm-keyword","^4.1.0"]
+252 verbose parsed url { protocol: null,
+252 verbose parsed url   slashes: null,
+252 verbose parsed url   auth: null,
+252 verbose parsed url   host: null,
+252 verbose parsed url   port: null,
+252 verbose parsed url   hostname: null,
+252 verbose parsed url   hash: null,
+252 verbose parsed url   search: null,
+252 verbose parsed url   query: null,
+252 verbose parsed url   pathname: '^4.1.0',
+252 verbose parsed url   path: '^4.1.0',
+252 verbose parsed url   href: '^4.1.0' }
+253 verbose addNamed [ 'npm-keyword', '^4.1.0' ]
+254 verbose addNamed [ null, null ]
+255 silly lockFile df7f7ada-npm-keyword-4-1-0 npm-keyword@^4.1.0
+256 verbose lock npm-keyword@^4.1.0 /Users/mm/.npm/df7f7ada-npm-keyword-4-1-0.lock
+257 verbose url raw cross-spawn-async
+258 verbose url resolving [ 'https://registry.npmjs.org/', './cross-spawn-async' ]
+259 verbose url resolved https://registry.npmjs.org/cross-spawn-async
+260 info trying registry request attempt 1 at 03:30:57
+261 http GET https://registry.npmjs.org/cross-spawn-async
+262 info addNameTag [ 'figures', '^1.3.5' ]
+263 info addNameTag [ 'fullname', '^2.0.0' ]
+264 info addNameTag [ 'got', '^5.0.0' ]
+265 info addNameTag [ 'humanize-string', '^1.0.0' ]
+266 info addNameTag [ 'inquirer', '^0.11.0' ]
+267 info addNameTag [ 'insight', '^0.7.0' ]
+268 info addNameTag [ 'lodash', '^3.2.0' ]
+269 info addNameTag [ 'meow', '^3.0.0' ]
+270 verbose cache add [ 'opn@^3.0.2', null ]
+271 verbose cache add name=undefined spec="opn@^3.0.2" args=["opn@^3.0.2",null]
+272 verbose parsed url { protocol: null,
+272 verbose parsed url   slashes: null,
+272 verbose parsed url   auth: null,
+272 verbose parsed url   host: null,
+272 verbose parsed url   port: null,
+272 verbose parsed url   hostname: null,
+272 verbose parsed url   hash: null,
+272 verbose parsed url   search: null,
+272 verbose parsed url   query: null,
+272 verbose parsed url   pathname: 'opn@^3.0.2',
+272 verbose parsed url   path: 'opn@^3.0.2',
+272 verbose parsed url   href: 'opn@^3.0.2' }
+273 verbose cache add name="opn" spec="^3.0.2" args=["opn","^3.0.2"]
+274 verbose parsed url { protocol: null,
+274 verbose parsed url   slashes: null,
+274 verbose parsed url   auth: null,
+274 verbose parsed url   host: null,
+274 verbose parsed url   port: null,
+274 verbose parsed url   hostname: null,
+274 verbose parsed url   hash: null,
+274 verbose parsed url   search: null,
+274 verbose parsed url   query: null,
+274 verbose parsed url   pathname: '^3.0.2',
+274 verbose parsed url   path: '^3.0.2',
+274 verbose parsed url   href: '^3.0.2' }
+275 verbose addNamed [ 'opn', '^3.0.2' ]
+276 verbose addNamed [ null, null ]
+277 silly lockFile 59407fbf-opn-3-0-2 opn@^3.0.2
+278 verbose lock opn@^3.0.2 /Users/mm/.npm/59407fbf-opn-3-0-2.lock
+279 verbose cache add [ 'package-json@^2.1.0', null ]
+280 verbose cache add name=undefined spec="package-json@^2.1.0" args=["package-json@^2.1.0",null]
+281 verbose parsed url { protocol: null,
+281 verbose parsed url   slashes: null,
+281 verbose parsed url   auth: null,
+281 verbose parsed url   host: null,
+281 verbose parsed url   port: null,
+281 verbose parsed url   hostname: null,
+281 verbose parsed url   hash: null,
+281 verbose parsed url   search: null,
+281 verbose parsed url   query: null,
+281 verbose parsed url   pathname: 'package-json@^2.1.0',
+281 verbose parsed url   path: 'package-json@^2.1.0',
+281 verbose parsed url   href: 'package-json@^2.1.0' }
+282 verbose cache add name="package-json" spec="^2.1.0" args=["package-json","^2.1.0"]
+283 verbose parsed url { protocol: null,
+283 verbose parsed url   slashes: null,
+283 verbose parsed url   auth: null,
+283 verbose parsed url   host: null,
+283 verbose parsed url   port: null,
+283 verbose parsed url   hostname: null,
+283 verbose parsed url   hash: null,
+283 verbose parsed url   search: null,
+283 verbose parsed url   query: null,
+283 verbose parsed url   pathname: '^2.1.0',
+283 verbose parsed url   path: '^2.1.0',
+283 verbose parsed url   href: '^2.1.0' }
+284 verbose addNamed [ 'package-json', '^2.1.0' ]
+285 verbose addNamed [ null, null ]
+286 silly lockFile f556ace9-package-json-2-1-0 package-json@^2.1.0
+287 verbose lock package-json@^2.1.0 /Users/mm/.npm/f556ace9-package-json-2-1-0.lock
+288 verbose cache add [ 'read-pkg-up@^1.0.1', null ]
+289 verbose cache add name=undefined spec="read-pkg-up@^1.0.1" args=["read-pkg-up@^1.0.1",null]
+290 verbose parsed url { protocol: null,
+290 verbose parsed url   slashes: null,
+290 verbose parsed url   auth: null,
+290 verbose parsed url   host: null,
+290 verbose parsed url   port: null,
+290 verbose parsed url   hostname: null,
+290 verbose parsed url   hash: null,
+290 verbose parsed url   search: null,
+290 verbose parsed url   query: null,
+290 verbose parsed url   pathname: 'read-pkg-up@^1.0.1',
+290 verbose parsed url   path: 'read-pkg-up@^1.0.1',
+290 verbose parsed url   href: 'read-pkg-up@^1.0.1' }
+291 verbose cache add name="read-pkg-up" spec="^1.0.1" args=["read-pkg-up","^1.0.1"]
+292 verbose parsed url { protocol: null,
+292 verbose parsed url   slashes: null,
+292 verbose parsed url   auth: null,
+292 verbose parsed url   host: null,
+292 verbose parsed url   port: null,
+292 verbose parsed url   hostname: null,
+292 verbose parsed url   hash: null,
+292 verbose parsed url   search: null,
+292 verbose parsed url   query: null,
+292 verbose parsed url   pathname: '^1.0.1',
+292 verbose parsed url   path: '^1.0.1',
+292 verbose parsed url   href: '^1.0.1' }
+293 verbose addNamed [ 'read-pkg-up', '^1.0.1' ]
+294 verbose addNamed [ null, null ]
+295 silly lockFile 9d3cf0dc-read-pkg-up-1-0-1 read-pkg-up@^1.0.1
+296 verbose lock read-pkg-up@^1.0.1 /Users/mm/.npm/9d3cf0dc-read-pkg-up-1-0-1.lock
+297 verbose cache add [ 'repeating@^2.0.0', null ]
+298 verbose cache add name=undefined spec="repeating@^2.0.0" args=["repeating@^2.0.0",null]
+299 verbose parsed url { protocol: null,
+299 verbose parsed url   slashes: null,
+299 verbose parsed url   auth: null,
+299 verbose parsed url   host: null,
+299 verbose parsed url   port: null,
+299 verbose parsed url   hostname: null,
+299 verbose parsed url   hash: null,
+299 verbose parsed url   search: null,
+299 verbose parsed url   query: null,
+299 verbose parsed url   pathname: 'repeating@^2.0.0',
+299 verbose parsed url   path: 'repeating@^2.0.0',
+299 verbose parsed url   href: 'repeating@^2.0.0' }
+300 verbose cache add name="repeating" spec="^2.0.0" args=["repeating","^2.0.0"]
+301 verbose parsed url { protocol: null,
+301 verbose parsed url   slashes: null,
+301 verbose parsed url   auth: null,
+301 verbose parsed url   host: null,
+301 verbose parsed url   port: null,
+301 verbose parsed url   hostname: null,
+301 verbose parsed url   hash: null,
+301 verbose parsed url   search: null,
+301 verbose parsed url   query: null,
+301 verbose parsed url   pathname: '^2.0.0',
+301 verbose parsed url   path: '^2.0.0',
+301 verbose parsed url   href: '^2.0.0' }
+302 verbose addNamed [ 'repeating', '^2.0.0' ]
+303 verbose addNamed [ null, null ]
+304 silly lockFile 91324256-repeating-2-0-0 repeating@^2.0.0
+305 verbose lock repeating@^2.0.0 /Users/mm/.npm/91324256-repeating-2-0-0.lock
+306 verbose cache add [ 'root-check@^1.0.0', null ]
+307 verbose cache add name=undefined spec="root-check@^1.0.0" args=["root-check@^1.0.0",null]
+308 verbose parsed url { protocol: null,
+308 verbose parsed url   slashes: null,
+308 verbose parsed url   auth: null,
+308 verbose parsed url   host: null,
+308 verbose parsed url   port: null,
+308 verbose parsed url   hostname: null,
+308 verbose parsed url   hash: null,
+308 verbose parsed url   search: null,
+308 verbose parsed url   query: null,
+308 verbose parsed url   pathname: 'root-check@^1.0.0',
+308 verbose parsed url   path: 'root-check@^1.0.0',
+308 verbose parsed url   href: 'root-check@^1.0.0' }
+309 verbose cache add name="root-check" spec="^1.0.0" args=["root-check","^1.0.0"]
+310 verbose parsed url { protocol: null,
+310 verbose parsed url   slashes: null,
+310 verbose parsed url   auth: null,
+310 verbose parsed url   host: null,
+310 verbose parsed url   port: null,
+310 verbose parsed url   hostname: null,
+310 verbose parsed url   hash: null,
+310 verbose parsed url   search: null,
+310 verbose parsed url   query: null,
+310 verbose parsed url   pathname: '^1.0.0',
+310 verbose parsed url   path: '^1.0.0',
+310 verbose parsed url   href: '^1.0.0' }
+311 verbose addNamed [ 'root-check', '^1.0.0' ]
+312 verbose addNamed [ null, null ]
+313 silly lockFile 089e849d-root-check-1-0-0 root-check@^1.0.0
+314 verbose lock root-check@^1.0.0 /Users/mm/.npm/089e849d-root-check-1-0-0.lock
+315 verbose cache add [ 'sort-on@^1.0.0', null ]
+316 verbose cache add name=undefined spec="sort-on@^1.0.0" args=["sort-on@^1.0.0",null]
+317 verbose parsed url { protocol: null,
+317 verbose parsed url   slashes: null,
+317 verbose parsed url   auth: null,
+317 verbose parsed url   host: null,
+317 verbose parsed url   port: null,
+317 verbose parsed url   hostname: null,
+317 verbose parsed url   hash: null,
+317 verbose parsed url   search: null,
+317 verbose parsed url   query: null,
+317 verbose parsed url   pathname: 'sort-on@^1.0.0',
+317 verbose parsed url   path: 'sort-on@^1.0.0',
+317 verbose parsed url   href: 'sort-on@^1.0.0' }
+318 verbose cache add name="sort-on" spec="^1.0.0" args=["sort-on","^1.0.0"]
+319 verbose parsed url { protocol: null,
+319 verbose parsed url   slashes: null,
+319 verbose parsed url   auth: null,
+319 verbose parsed url   host: null,
+319 verbose parsed url   port: null,
+319 verbose parsed url   hostname: null,
+319 verbose parsed url   hash: null,
+319 verbose parsed url   search: null,
+319 verbose parsed url   query: null,
+319 verbose parsed url   pathname: '^1.0.0',
+319 verbose parsed url   path: '^1.0.0',
+319 verbose parsed url   href: '^1.0.0' }
+320 verbose addNamed [ 'sort-on', '^1.0.0' ]
+321 verbose addNamed [ null, null ]
+322 silly lockFile c0a207ad-sort-on-1-0-0 sort-on@^1.0.0
+323 verbose lock sort-on@^1.0.0 /Users/mm/.npm/c0a207ad-sort-on-1-0-0.lock
+324 verbose cache add [ 'string-length@^1.0.0', null ]
+325 verbose cache add name=undefined spec="string-length@^1.0.0" args=["string-length@^1.0.0",null]
+326 verbose parsed url { protocol: null,
+326 verbose parsed url   slashes: null,
+326 verbose parsed url   auth: null,
+326 verbose parsed url   host: null,
+326 verbose parsed url   port: null,
+326 verbose parsed url   hostname: null,
+326 verbose parsed url   hash: null,
+326 verbose parsed url   search: null,
+326 verbose parsed url   query: null,
+326 verbose parsed url   pathname: 'string-length@^1.0.0',
+326 verbose parsed url   path: 'string-length@^1.0.0',
+326 verbose parsed url   href: 'string-length@^1.0.0' }
+327 verbose cache add name="string-length" spec="^1.0.0" args=["string-length","^1.0.0"]
+328 verbose parsed url { protocol: null,
+328 verbose parsed url   slashes: null,
+328 verbose parsed url   auth: null,
+328 verbose parsed url   host: null,
+328 verbose parsed url   port: null,
+328 verbose parsed url   hostname: null,
+328 verbose parsed url   hash: null,
+328 verbose parsed url   search: null,
+328 verbose parsed url   query: null,
+328 verbose parsed url   pathname: '^1.0.0',
+328 verbose parsed url   path: '^1.0.0',
+328 verbose parsed url   href: '^1.0.0' }
+329 verbose addNamed [ 'string-length', '^1.0.0' ]
+330 verbose addNamed [ null, null ]
+331 silly lockFile ea6ea592-string-length-1-0-0 string-length@^1.0.0
+332 verbose lock string-length@^1.0.0 /Users/mm/.npm/ea6ea592-string-length-1-0-0.lock
+333 verbose cache add [ 'titleize@^1.0.0', null ]
+334 verbose cache add name=undefined spec="titleize@^1.0.0" args=["titleize@^1.0.0",null]
+335 verbose parsed url { protocol: null,
+335 verbose parsed url   slashes: null,
+335 verbose parsed url   auth: null,
+335 verbose parsed url   host: null,
+335 verbose parsed url   port: null,
+335 verbose parsed url   hostname: null,
+335 verbose parsed url   hash: null,
+335 verbose parsed url   search: null,
+335 verbose parsed url   query: null,
+335 verbose parsed url   pathname: 'titleize@^1.0.0',
+335 verbose parsed url   path: 'titleize@^1.0.0',
+335 verbose parsed url   href: 'titleize@^1.0.0' }
+336 verbose cache add name="titleize" spec="^1.0.0" args=["titleize","^1.0.0"]
+337 verbose parsed url { protocol: null,
+337 verbose parsed url   slashes: null,
+337 verbose parsed url   auth: null,
+337 verbose parsed url   host: null,
+337 verbose parsed url   port: null,
+337 verbose parsed url   hostname: null,
+337 verbose parsed url   hash: null,
+337 verbose parsed url   search: null,
+337 verbose parsed url   query: null,
+337 verbose parsed url   pathname: '^1.0.0',
+337 verbose parsed url   path: '^1.0.0',
+337 verbose parsed url   href: '^1.0.0' }
+338 verbose addNamed [ 'titleize', '^1.0.0' ]
+339 verbose addNamed [ null, null ]
+340 silly lockFile f71ddb2e-titleize-1-0-0 titleize@^1.0.0
+341 verbose lock titleize@^1.0.0 /Users/mm/.npm/f71ddb2e-titleize-1-0-0.lock
+342 verbose cache add [ 'update-notifier@^0.5.0', null ]
+343 verbose cache add name=undefined spec="update-notifier@^0.5.0" args=["update-notifier@^0.5.0",null]
+344 verbose parsed url { protocol: null,
+344 verbose parsed url   slashes: null,
+344 verbose parsed url   auth: null,
+344 verbose parsed url   host: null,
+344 verbose parsed url   port: null,
+344 verbose parsed url   hostname: null,
+344 verbose parsed url   hash: null,
+344 verbose parsed url   search: null,
+344 verbose parsed url   query: null,
+344 verbose parsed url   pathname: 'update-notifier@^0.5.0',
+344 verbose parsed url   path: 'update-notifier@^0.5.0',
+344 verbose parsed url   href: 'update-notifier@^0.5.0' }
+345 verbose cache add name="update-notifier" spec="^0.5.0" args=["update-notifier","^0.5.0"]
+346 verbose parsed url { protocol: null,
+346 verbose parsed url   slashes: null,
+346 verbose parsed url   auth: null,
+346 verbose parsed url   host: null,
+346 verbose parsed url   port: null,
+346 verbose parsed url   hostname: null,
+346 verbose parsed url   hash: null,
+346 verbose parsed url   search: null,
+346 verbose parsed url   query: null,
+346 verbose parsed url   pathname: '^0.5.0',
+346 verbose parsed url   path: '^0.5.0',
+346 verbose parsed url   href: '^0.5.0' }
+347 verbose addNamed [ 'update-notifier', '^0.5.0' ]
+348 verbose addNamed [ null, null ]
+349 silly lockFile 51534ab2-update-notifier-0-5-0 update-notifier@^0.5.0
+350 verbose lock update-notifier@^0.5.0 /Users/mm/.npm/51534ab2-update-notifier-0-5-0.lock
+351 verbose cache add [ 'user-home@^2.0.0', null ]
+352 verbose cache add name=undefined spec="user-home@^2.0.0" args=["user-home@^2.0.0",null]
+353 verbose parsed url { protocol: null,
+353 verbose parsed url   slashes: null,
+353 verbose parsed url   auth: null,
+353 verbose parsed url   host: null,
+353 verbose parsed url   port: null,
+353 verbose parsed url   hostname: null,
+353 verbose parsed url   hash: null,
+353 verbose parsed url   search: null,
+353 verbose parsed url   query: null,
+353 verbose parsed url   pathname: 'user-home@^2.0.0',
+353 verbose parsed url   path: 'user-home@^2.0.0',
+353 verbose parsed url   href: 'user-home@^2.0.0' }
+354 verbose cache add name="user-home" spec="^2.0.0" args=["user-home","^2.0.0"]
+355 verbose parsed url { protocol: null,
+355 verbose parsed url   slashes: null,
+355 verbose parsed url   auth: null,
+355 verbose parsed url   host: null,
+355 verbose parsed url   port: null,
+355 verbose parsed url   hostname: null,
+355 verbose parsed url   hash: null,
+355 verbose parsed url   search: null,
+355 verbose parsed url   query: null,
+355 verbose parsed url   pathname: '^2.0.0',
+355 verbose parsed url   path: '^2.0.0',
+355 verbose parsed url   href: '^2.0.0' }
+356 verbose addNamed [ 'user-home', '^2.0.0' ]
+357 verbose addNamed [ null, null ]
+358 silly lockFile fb1086f1-user-home-2-0-0 user-home@^2.0.0
+359 verbose lock user-home@^2.0.0 /Users/mm/.npm/fb1086f1-user-home-2-0-0.lock
+360 verbose cache add [ 'yeoman-character@^1.0.0', null ]
+361 verbose cache add name=undefined spec="yeoman-character@^1.0.0" args=["yeoman-character@^1.0.0",null]
+362 verbose parsed url { protocol: null,
+362 verbose parsed url   slashes: null,
+362 verbose parsed url   auth: null,
+362 verbose parsed url   host: null,
+362 verbose parsed url   port: null,
+362 verbose parsed url   hostname: null,
+362 verbose parsed url   hash: null,
+362 verbose parsed url   search: null,
+362 verbose parsed url   query: null,
+362 verbose parsed url   pathname: 'yeoman-character@^1.0.0',
+362 verbose parsed url   path: 'yeoman-character@^1.0.0',
+362 verbose parsed url   href: 'yeoman-character@^1.0.0' }
+363 verbose cache add name="yeoman-character" spec="^1.0.0" args=["yeoman-character","^1.0.0"]
+364 verbose parsed url { protocol: null,
+364 verbose parsed url   slashes: null,
+364 verbose parsed url   auth: null,
+364 verbose parsed url   host: null,
+364 verbose parsed url   port: null,
+364 verbose parsed url   hostname: null,
+364 verbose parsed url   hash: null,
+364 verbose parsed url   search: null,
+364 verbose parsed url   query: null,
+364 verbose parsed url   pathname: '^1.0.0',
+364 verbose parsed url   path: '^1.0.0',
+364 verbose parsed url   href: '^1.0.0' }
+365 verbose addNamed [ 'yeoman-character', '^1.0.0' ]
+366 verbose addNamed [ null, null ]
+367 silly lockFile ec96c7fc-yeoman-character-1-0-0 yeoman-character@^1.0.0
+368 verbose lock yeoman-character@^1.0.0 /Users/mm/.npm/ec96c7fc-yeoman-character-1-0-0.lock
+369 verbose cache add [ 'yeoman-doctor@^2.0.0', null ]
+370 verbose cache add name=undefined spec="yeoman-doctor@^2.0.0" args=["yeoman-doctor@^2.0.0",null]
+371 verbose parsed url { protocol: null,
+371 verbose parsed url   slashes: null,
+371 verbose parsed url   auth: null,
+371 verbose parsed url   host: null,
+371 verbose parsed url   port: null,
+371 verbose parsed url   hostname: null,
+371 verbose parsed url   hash: null,
+371 verbose parsed url   search: null,
+371 verbose parsed url   query: null,
+371 verbose parsed url   pathname: 'yeoman-doctor@^2.0.0',
+371 verbose parsed url   path: 'yeoman-doctor@^2.0.0',
+371 verbose parsed url   href: 'yeoman-doctor@^2.0.0' }
+372 verbose cache add name="yeoman-doctor" spec="^2.0.0" args=["yeoman-doctor","^2.0.0"]
+373 verbose parsed url { protocol: null,
+373 verbose parsed url   slashes: null,
+373 verbose parsed url   auth: null,
+373 verbose parsed url   host: null,
+373 verbose parsed url   port: null,
+373 verbose parsed url   hostname: null,
+373 verbose parsed url   hash: null,
+373 verbose parsed url   search: null,
+373 verbose parsed url   query: null,
+373 verbose parsed url   pathname: '^2.0.0',
+373 verbose parsed url   path: '^2.0.0',
+373 verbose parsed url   href: '^2.0.0' }
+374 verbose addNamed [ 'yeoman-doctor', '^2.0.0' ]
+375 verbose addNamed [ null, null ]
+376 silly lockFile 4b389df7-yeoman-doctor-2-0-0 yeoman-doctor@^2.0.0
+377 verbose lock yeoman-doctor@^2.0.0 /Users/mm/.npm/4b389df7-yeoman-doctor-2-0-0.lock
+378 verbose cache add [ 'yeoman-environment@^1.2.7', null ]
+379 verbose cache add name=undefined spec="yeoman-environment@^1.2.7" args=["yeoman-environment@^1.2.7",null]
+380 verbose parsed url { protocol: null,
+380 verbose parsed url   slashes: null,
+380 verbose parsed url   auth: null,
+380 verbose parsed url   host: null,
+380 verbose parsed url   port: null,
+380 verbose parsed url   hostname: null,
+380 verbose parsed url   hash: null,
+380 verbose parsed url   search: null,
+380 verbose parsed url   query: null,
+380 verbose parsed url   pathname: 'yeoman-environment@^1.2.7',
+380 verbose parsed url   path: 'yeoman-environment@^1.2.7',
+380 verbose parsed url   href: 'yeoman-environment@^1.2.7' }
+381 verbose cache add name="yeoman-environment" spec="^1.2.7" args=["yeoman-environment","^1.2.7"]
+382 verbose parsed url { protocol: null,
+382 verbose parsed url   slashes: null,
+382 verbose parsed url   auth: null,
+382 verbose parsed url   host: null,
+382 verbose parsed url   port: null,
+382 verbose parsed url   hostname: null,
+382 verbose parsed url   hash: null,
+382 verbose parsed url   search: null,
+382 verbose parsed url   query: null,
+382 verbose parsed url   pathname: '^1.2.7',
+382 verbose parsed url   path: '^1.2.7',
+382 verbose parsed url   href: '^1.2.7' }
+383 verbose addNamed [ 'yeoman-environment', '^1.2.7' ]
+384 verbose addNamed [ null, null ]
+385 silly lockFile 446112c8-yeoman-environment-1-2-7 yeoman-environment@^1.2.7
+386 verbose lock yeoman-environment@^1.2.7 /Users/mm/.npm/446112c8-yeoman-environment-1-2-7.lock
+387 verbose cache add [ 'yosay@^1.0.0', null ]
+388 verbose cache add name=undefined spec="yosay@^1.0.0" args=["yosay@^1.0.0",null]
+389 verbose parsed url { protocol: null,
+389 verbose parsed url   slashes: null,
+389 verbose parsed url   auth: null,
+389 verbose parsed url   host: null,
+389 verbose parsed url   port: null,
+389 verbose parsed url   hostname: null,
+389 verbose parsed url   hash: null,
+389 verbose parsed url   search: null,
+389 verbose parsed url   query: null,
+389 verbose parsed url   pathname: 'yosay@^1.0.0',
+389 verbose parsed url   path: 'yosay@^1.0.0',
+389 verbose parsed url   href: 'yosay@^1.0.0' }
+390 verbose cache add name="yosay" spec="^1.0.0" args=["yosay","^1.0.0"]
+391 verbose parsed url { protocol: null,
+391 verbose parsed url   slashes: null,
+391 verbose parsed url   auth: null,
+391 verbose parsed url   host: null,
+391 verbose parsed url   port: null,
+391 verbose parsed url   hostname: null,
+391 verbose parsed url   hash: null,
+391 verbose parsed url   search: null,
+391 verbose parsed url   query: null,
+391 verbose parsed url   pathname: '^1.0.0',
+391 verbose parsed url   path: '^1.0.0',
+391 verbose parsed url   href: '^1.0.0' }
+392 verbose addNamed [ 'yosay', '^1.0.0' ]
+393 verbose addNamed [ null, null ]
+394 silly lockFile 39094cbc-yosay-1-0-0 yosay@^1.0.0
+395 verbose lock yosay@^1.0.0 /Users/mm/.npm/39094cbc-yosay-1-0-0.lock
+396 verbose cache add [ 'async@^1.0.0', null ]
+397 verbose cache add name=undefined spec="async@^1.0.0" args=["async@^1.0.0",null]
+398 verbose parsed url { protocol: null,
+398 verbose parsed url   slashes: null,
+398 verbose parsed url   auth: null,
+398 verbose parsed url   host: null,
+398 verbose parsed url   port: null,
+398 verbose parsed url   hostname: null,
+398 verbose parsed url   hash: null,
+398 verbose parsed url   search: null,
+398 verbose parsed url   query: null,
+398 verbose parsed url   pathname: 'async@^1.0.0',
+398 verbose parsed url   path: 'async@^1.0.0',
+398 verbose parsed url   href: 'async@^1.0.0' }
+399 verbose cache add name="async" spec="^1.0.0" args=["async","^1.0.0"]
+400 verbose parsed url { protocol: null,
+400 verbose parsed url   slashes: null,
+400 verbose parsed url   auth: null,
+400 verbose parsed url   host: null,
+400 verbose parsed url   port: null,
+400 verbose parsed url   hostname: null,
+400 verbose parsed url   hash: null,
+400 verbose parsed url   search: null,
+400 verbose parsed url   query: null,
+400 verbose parsed url   pathname: '^1.0.0',
+400 verbose parsed url   path: '^1.0.0',
+400 verbose parsed url   href: '^1.0.0' }
+401 verbose addNamed [ 'async', '^1.0.0' ]
+402 verbose addNamed [ null, null ]
+403 silly lockFile 07c7c793-async-1-0-0 async@^1.0.0
+404 verbose lock async@^1.0.0 /Users/mm/.npm/07c7c793-async-1-0-0.lock
+405 info addNameTag [ 'npm-keyword', '^4.1.0' ]
+406 verbose url raw figures
+407 verbose url resolving [ 'https://registry.npmjs.org/', './figures' ]
+408 verbose url resolved https://registry.npmjs.org/figures
+409 info trying registry request attempt 1 at 03:30:57
+410 http GET https://registry.npmjs.org/figures
+411 verbose url raw fullname
+412 verbose url resolving [ 'https://registry.npmjs.org/', './fullname' ]
+413 verbose url resolved https://registry.npmjs.org/fullname
+414 info trying registry request attempt 1 at 03:30:57
+415 http GET https://registry.npmjs.org/fullname
+416 verbose url raw got
+417 verbose url resolving [ 'https://registry.npmjs.org/', './got' ]
+418 verbose url resolved https://registry.npmjs.org/got
+419 info trying registry request attempt 1 at 03:30:57
+420 http GET https://registry.npmjs.org/got
+421 verbose url raw humanize-string
+422 verbose url resolving [ 'https://registry.npmjs.org/', './humanize-string' ]
+423 verbose url resolved https://registry.npmjs.org/humanize-string
+424 info trying registry request attempt 1 at 03:30:57
+425 http GET https://registry.npmjs.org/humanize-string
+426 verbose url raw insight
+427 verbose url resolving [ 'https://registry.npmjs.org/', './insight' ]
+428 verbose url resolved https://registry.npmjs.org/insight
+429 info trying registry request attempt 1 at 03:30:57
+430 http GET https://registry.npmjs.org/insight
+431 verbose url raw meow
+432 verbose url resolving [ 'https://registry.npmjs.org/', './meow' ]
+433 verbose url resolved https://registry.npmjs.org/meow
+434 info trying registry request attempt 1 at 03:30:57
+435 http GET https://registry.npmjs.org/meow
+436 info addNameTag [ 'opn', '^3.0.2' ]
+437 info addNameTag [ 'package-json', '^2.1.0' ]
+438 info addNameTag [ 'read-pkg-up', '^1.0.1' ]
+439 info addNameTag [ 'repeating', '^2.0.0' ]
+440 info addNameTag [ 'root-check', '^1.0.0' ]
+441 info addNameTag [ 'sort-on', '^1.0.0' ]
+442 info addNameTag [ 'string-length', '^1.0.0' ]
+443 info addNameTag [ 'titleize', '^1.0.0' ]
+444 info addNameTag [ 'update-notifier', '^0.5.0' ]
+445 info addNameTag [ 'user-home', '^2.0.0' ]
+446 info addNameTag [ 'yeoman-character', '^1.0.0' ]
+447 info addNameTag [ 'yeoman-doctor', '^2.0.0' ]
+448 info addNameTag [ 'yeoman-environment', '^1.2.7' ]
+449 info addNameTag [ 'yosay', '^1.0.0' ]
+450 verbose cache add [ 'chalk@^1.0.0', null ]
+451 verbose cache add name=undefined spec="chalk@^1.0.0" args=["chalk@^1.0.0",null]
+452 verbose parsed url { protocol: null,
+452 verbose parsed url   slashes: null,
+452 verbose parsed url   auth: null,
+452 verbose parsed url   host: null,
+452 verbose parsed url   port: null,
+452 verbose parsed url   hostname: null,
+452 verbose parsed url   hash: null,
+452 verbose parsed url   search: null,
+452 verbose parsed url   query: null,
+452 verbose parsed url   pathname: 'chalk@^1.0.0',
+452 verbose parsed url   path: 'chalk@^1.0.0',
+452 verbose parsed url   href: 'chalk@^1.0.0' }
+453 verbose cache add name="chalk" spec="^1.0.0" args=["chalk","^1.0.0"]
+454 verbose parsed url { protocol: null,
+454 verbose parsed url   slashes: null,
+454 verbose parsed url   auth: null,
+454 verbose parsed url   host: null,
+454 verbose parsed url   port: null,
+454 verbose parsed url   hostname: null,
+454 verbose parsed url   hash: null,
+454 verbose parsed url   search: null,
+454 verbose parsed url   query: null,
+454 verbose parsed url   pathname: '^1.0.0',
+454 verbose parsed url   path: '^1.0.0',
+454 verbose parsed url   href: '^1.0.0' }
+455 verbose addNamed [ 'chalk', '^1.0.0' ]
+456 verbose addNamed [ null, null ]
+457 silly lockFile 2b6848f7-chalk-1-0-0 chalk@^1.0.0
+458 verbose lock chalk@^1.0.0 /Users/mm/.npm/2b6848f7-chalk-1-0-0.lock
+459 info addNameTag [ 'async', '^1.0.0' ]
+460 verbose url raw npm-keyword
+461 verbose url resolving [ 'https://registry.npmjs.org/', './npm-keyword' ]
+462 verbose url resolved https://registry.npmjs.org/npm-keyword
+463 info trying registry request attempt 1 at 03:30:57
+464 http GET https://registry.npmjs.org/npm-keyword
+465 verbose url raw opn
+466 verbose url resolving [ 'https://registry.npmjs.org/', './opn' ]
+467 verbose url resolved https://registry.npmjs.org/opn
+468 info trying registry request attempt 1 at 03:30:57
+469 http GET https://registry.npmjs.org/opn
+470 verbose url raw package-json
+471 verbose url resolving [ 'https://registry.npmjs.org/', './package-json' ]
+472 verbose url resolved https://registry.npmjs.org/package-json
+473 info trying registry request attempt 1 at 03:30:57
+474 http GET https://registry.npmjs.org/package-json
+475 verbose url raw read-pkg-up
+476 verbose url resolving [ 'https://registry.npmjs.org/', './read-pkg-up' ]
+477 verbose url resolved https://registry.npmjs.org/read-pkg-up
+478 info trying registry request attempt 1 at 03:30:57
+479 http GET https://registry.npmjs.org/read-pkg-up
+480 verbose url raw repeating
+481 verbose url resolving [ 'https://registry.npmjs.org/', './repeating' ]
+482 verbose url resolved https://registry.npmjs.org/repeating
+483 info trying registry request attempt 1 at 03:30:57
+484 http GET https://registry.npmjs.org/repeating
+485 verbose url raw root-check
+486 verbose url resolving [ 'https://registry.npmjs.org/', './root-check' ]
+487 verbose url resolved https://registry.npmjs.org/root-check
+488 info trying registry request attempt 1 at 03:30:57
+489 http GET https://registry.npmjs.org/root-check
+490 verbose url raw sort-on
+491 verbose url resolving [ 'https://registry.npmjs.org/', './sort-on' ]
+492 verbose url resolved https://registry.npmjs.org/sort-on
+493 info trying registry request attempt 1 at 03:30:57
+494 http GET https://registry.npmjs.org/sort-on
+495 verbose url raw string-length
+496 verbose url resolving [ 'https://registry.npmjs.org/', './string-length' ]
+497 verbose url resolved https://registry.npmjs.org/string-length
+498 info trying registry request attempt 1 at 03:30:57
+499 http GET https://registry.npmjs.org/string-length
+500 verbose url raw titleize
+501 verbose url resolving [ 'https://registry.npmjs.org/', './titleize' ]
+502 verbose url resolved https://registry.npmjs.org/titleize
+503 info trying registry request attempt 1 at 03:30:57
+504 http GET https://registry.npmjs.org/titleize
+505 verbose url raw user-home
+506 verbose url resolving [ 'https://registry.npmjs.org/', './user-home' ]
+507 verbose url resolved https://registry.npmjs.org/user-home
+508 info trying registry request attempt 1 at 03:30:57
+509 http GET https://registry.npmjs.org/user-home
+510 verbose url raw yeoman-character
+511 verbose url resolving [ 'https://registry.npmjs.org/', './yeoman-character' ]
+512 verbose url resolved https://registry.npmjs.org/yeoman-character
+513 info trying registry request attempt 1 at 03:30:57
+514 http GET https://registry.npmjs.org/yeoman-character
+515 verbose url raw yeoman-doctor
+516 verbose url resolving [ 'https://registry.npmjs.org/', './yeoman-doctor' ]
+517 verbose url resolved https://registry.npmjs.org/yeoman-doctor
+518 info trying registry request attempt 1 at 03:30:57
+519 http GET https://registry.npmjs.org/yeoman-doctor
+520 verbose url raw yeoman-environment
+521 verbose url resolving [ 'https://registry.npmjs.org/', './yeoman-environment' ]
+522 verbose url resolved https://registry.npmjs.org/yeoman-environment
+523 info trying registry request attempt 1 at 03:30:57
+524 http GET https://registry.npmjs.org/yeoman-environment
+525 info addNameTag [ 'chalk', '^1.0.0' ]
+526 verbose url raw inquirer
+527 verbose url resolving [ 'https://registry.npmjs.org/', './inquirer' ]
+528 verbose url resolved https://registry.npmjs.org/inquirer
+529 info trying registry request attempt 1 at 03:30:57
+530 verbose etag "4N9E33THRPEMUH6DN1V2YOX41"
+531 http GET https://registry.npmjs.org/inquirer
+532 verbose url raw lodash
+533 verbose url resolving [ 'https://registry.npmjs.org/', './lodash' ]
+534 verbose url resolved https://registry.npmjs.org/lodash
+535 info trying registry request attempt 1 at 03:30:57
+536 verbose etag "AB8SFJDG660E45W3QZ4I8B3Y3"
+537 http GET https://registry.npmjs.org/lodash
+538 verbose url raw update-notifier
+539 verbose url resolving [ 'https://registry.npmjs.org/', './update-notifier' ]
+540 verbose url resolved https://registry.npmjs.org/update-notifier
+541 info trying registry request attempt 1 at 03:30:57
+542 verbose etag "9RFA8JL01WJUWTUI9VY20VYNQ"
+543 http GET https://registry.npmjs.org/update-notifier
+544 verbose url raw yosay
+545 verbose url resolving [ 'https://registry.npmjs.org/', './yosay' ]
+546 verbose url resolved https://registry.npmjs.org/yosay
+547 info trying registry request attempt 1 at 03:30:57
+548 verbose etag "4LL0ABB8TZ07FVYSVM9PBQ4AP"
+549 http GET https://registry.npmjs.org/yosay
+550 verbose url raw async
+551 verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+552 verbose url resolved https://registry.npmjs.org/async
+553 info trying registry request attempt 1 at 03:30:57
+554 verbose etag "3PBOKAZGP0GMCBJQFA2GWBQ6J"
+555 http GET https://registry.npmjs.org/async
+556 verbose url raw chalk
+557 verbose url resolving [ 'https://registry.npmjs.org/', './chalk' ]
+558 verbose url resolved https://registry.npmjs.org/chalk
+559 info trying registry request attempt 1 at 03:30:57
+560 verbose etag "6SPTFZRN7FIYO18Z6FDS47ZBW"
+561 http GET https://registry.npmjs.org/chalk
+562 http 200 https://registry.npmjs.org/cross-spawn-async
+563 silly registry.get cb [ 200,
+563 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+563 silly registry.get     etag: '"EH80IGAS913GKHQ54NO30V1FX"',
+563 silly registry.get     'content-type': 'application/json',
+563 silly registry.get     'cache-control': 'max-age=300',
+563 silly registry.get     'content-length': '11820',
+563 silly registry.get     'accept-ranges': 'bytes',
+563 silly registry.get     date: 'Sun, 27 Dec 2015 01:30:57 GMT',
+563 silly registry.get     via: '1.1 varnish',
+563 silly registry.get     age: '110',
+563 silly registry.get     connection: 'keep-alive',
+563 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+563 silly registry.get     'x-cache': 'HIT',
+563 silly registry.get     'x-cache-hits': '1',
+563 silly registry.get     'x-timer': 'S1451179857.955089,VS0,VE0',
+563 silly registry.get     vary: 'Accept' } ]
+564 silly lockFile 7318eeb5-cross-spawn-async-2-0-0 cross-spawn-async@^2.0.0
+565 silly lockFile 7318eeb5-cross-spawn-async-2-0-0 cross-spawn-async@^2.0.0
+566 verbose about to build /Users/mm/.nvm/v0.11.0/lib/node_modules/yo
+567 info /Users/mm/.nvm/v0.11.0/lib/node_modules/yo unbuild
+568 verbose from cache /Users/mm/.nvm/v0.11.0/lib/node_modules/yo/package.json
+569 info preuninstall yo@1.5.1
+570 info uninstall yo@1.5.1
+571 verbose true,/Users/mm/.nvm/v0.11.0/lib/node_modules,/Users/mm/.nvm/v0.11.0/lib/node_modules unbuild yo@1.5.1
+572 verbose /Users/mm/.nvm/v0.11.0/bin,[object Object] binRoot
+573 info postuninstall yo@1.5.1
+574 error Error: No compatible version found: cross-spawn-async@'^2.0.0'
+574 error Valid install targets:
+574 error ["0.1.0","1.0.0","1.0.1","2.0.0","2.0.1","2.1.0","2.1.1"]
+574 error     at installTargetsError (/Users/mm/.nvm/v0.11.0/lib/node_modules/npm/lib/cache.js:685:10)
+574 error     at /Users/mm/.nvm/v0.11.0/lib/node_modules/npm/lib/cache.js:607:10
+574 error     at saved (/Users/mm/.nvm/v0.11.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+574 error     at Object.oncomplete (fs.js:94:15)
+575 error If you need help, you may report this log at:
+575 error     <http://github.com/isaacs/npm/issues>
+575 error or email it to:
+575 error     <npm-@googlegroups.com>
+576 error System Darwin 15.2.0
+577 error command "/Users/mm/.nvm/v0.11.0/bin/node" "/Users/mm/.nvm/v0.11.0/bin/npm" "i" "-g" "yo"
+578 error cwd /Users/mm/Downloads/z-labs/dotfiles-2.0
+579 error node -v v0.11.0
+580 error npm -v 1.2.15
+581 verbose exit [ 1, true ]

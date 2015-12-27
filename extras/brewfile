@@ -1,0 +1,34 @@
+ack
+ant
+Caskroom/cask/java Caskroom/cask/xquartz
+cassandra
+cmake
+coreutils
+couchdb
+ctags-exuberant
+elasticsearch
+fasd
+git
+go
+grc
+hadoop
+hbase
+htop
+iftop
+imagemagick
+iotop
+mariadb
+memcached
+mongodb
+moreutils
+mtop
+nginx
+install openssl && brew link --force openssl
+reattach-to-user-namespace
+redis
+scmpuff
+spark
+the_silver_searcher
+tmux
+vim
+wget
