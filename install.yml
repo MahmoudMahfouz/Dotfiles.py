@@ -113,6 +113,11 @@ installs:
     - export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH
     - export PATH=/opt/chefdk/bin:$PATH
 
+  tmuxinator:
+    .files:
+      ibg.yml:
+        path: tmuxinator/ibg.yml
+        sym: ~/.tmuxinator/
   vim:
     .files: # will use erb_vars from the current object
       vimrc:
@@ -140,6 +145,8 @@ installs:
     - export ZSH=$dotfiles_path'/zsh'
     - export ZSH_THEME="pygmalion"
     - export powerline="$HOME/.local/lib/python2.7/site-packages/powerline"
+    - export LC_ALL=en_US.UTF-8
+    - export LANG=en_US.UTF-8
     commands:
     - if [[ -e $ZSH ]]; then rm -rf $ZSH; fi
     - curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh

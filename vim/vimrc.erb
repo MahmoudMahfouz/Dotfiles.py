@@ -3,61 +3,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=<%= vim_path %>/bundle/Vundle.vim
-let path=<%= vim_path %>/bundle
+let path="<%= vim_path %>/bundle"
 let mapleader = " "     " set leader key
-
-set hidden
-"Share the clipboard between vim and OS
-set clipboard=unnamed
-
-" tabs and spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
-let g:Powerline_symbols = 'fancy'
-
-let g:session_autosave_periodic = 5
-let g:session_autosave_silent =true
-
-"Write the old file out when switching between files.
-set autowrite
-
-"Display current cursor position in lower right corner.
-set ruler
-
-"Show lines numbers
-#set relativenumber
-set number
-
-"Indent stuff
-set smartindent
-set autoindent
-
-"Highlight searching
-set hlsearch
-
-" case insensitive search
-set ignorecase
-set smartcase
-
-" faster vim
-
-set ttyfast
-set lazyredraw
-set re=1
-
-" for auto reloading files
-set autoread
-
-" toggle to paste without indenting
-set pastetoggle=<F2>
-
-let g:airline#extensions#tabline#enabled = 1
-set timeoutlen=500
 
 if has("autocmd")
  augroup myvimrchooks

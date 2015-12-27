@@ -1,6 +1,50 @@
+set hidden
+"Share the clipboard between vim and OS
+set clipboard=unnamed
+
+" tabs and spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+"Write the old file out when switching between files.
+set autowrite
+
+"Display current cursor position in lower right corner.
+set ruler
+
+"Show lines numbers
+"set relativenumber
+set number
+
+"Indent stuff
+set smartindent
+set autoindent
+
+"Highlight searching
+set hlsearch
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+" faster vim
+
+set ttyfast
+set lazyredraw
+set re=1
+
+" for auto reloading files
+set autoread
+
+" toggle to paste without indenting
+set pastetoggle=<F2>
+
+set timeoutlen=500
 " KEY MAPPINGS "
 
-" Workflow 
+" Workflow
 set hidden
 "" tabs (should be changed to not conflict with till command)
 nnoremap <leader>t  :tabnext<CR>
@@ -9,8 +53,8 @@ nnoremap <leader>tn  :tabnew<CR>
 nnoremap <leader>td  :tabclose<CR>
 
 " buffer managment
-nnoremap <leader>p :bp<cr>
-nnoremap <leader>n :bn<cr>
+map <C-x> :bp<cr>
+map <C-c> :bn<cr>
 
 "" windows
 noremap <C-h>              :wincmd h<cr>
@@ -22,7 +66,7 @@ noremap <C-j>              :wincmd j<cr>
 noremap Â :call MaximizeToggle()<CR>
 nnoremap µ :call MaximizeToggle()<CR>
 
-" Move windows Mac only alt/hjkl 
+" Move windows Mac only alt/hjkl
 noremap ˙              :wincmd H<cr>
 noremap ˚             :wincmd K<cr>
 noremap ¬              :wincmd L<cr>
@@ -33,7 +77,7 @@ nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
-map <C-m> :tabedit %<CR> 
+map <C-m> :tabedit %<CR>
 
 "Map escape key to jj -- much faster
 imap jj <esc>
@@ -46,6 +90,7 @@ nnoremap <leader>f :Ag <cword><CR>
 " GENERAL "
 colorscheme blazer
 set background=dark
+map <Esc><Esc> :w<CR>
 
 " Key mappings "
 " space + w closes buffer
@@ -60,6 +105,15 @@ command Q q
 
 " Vim airline
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+
+" Vim sessions
+let g:session_autosave_periodic = 5
+let g:session_autosave_silent = 1
+let g:session_autosave = 'yes'
 
 " toggle the C tagbar
 nmap <F9> :TagbarToggle<CR>
@@ -73,16 +127,32 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " CTRL+P "
 let g:ctrlp_map = '<c-p>'
-"" ctrlp exclude
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v\.(git|hg|svn|orig)$|\vtmp|\vdoc|\vcoverage|\vtags',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': '',
   \ }
+let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+
+" Nerdtree
+" go open and leave cursor in nt
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeMouseMode = 3
+map <Leader>nt :NERDTreeToggle<CR>
+map <Leader>nf :NERDTreeFind<CR>
 
 " easy motion
 let g:EasyMotion_smartcase = 1 " case insensitive matching
-let g:EasyMotion_use_smartsign_us = 1 " match 3 and # 
+let g:EasyMotion_use_smartsign_us = 1 " match 3 and #
 map / <Plug>(easymotion-sn)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
@@ -144,7 +214,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " sourcetype that support by this plugin
 
 " jquery "
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery 
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " json "
 au BufRead,BufNewFile *.json setf json

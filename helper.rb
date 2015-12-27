@@ -96,7 +96,6 @@ class Helper
   end
 
   def prompt_user(all_options)
-    counter = 0
     puts "Select the numbers that you which to install or enter all to install everything (may take a while)"
     all_options.each.with_index do |package, i|
       puts "#{i+1}. Install/Configure #{package}"

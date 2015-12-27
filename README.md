@@ -1,5 +1,4 @@
 # Dotfiles.rb
-=============
 Having a good dotfiles is a must for every Developer. It can save us days and even weeks of reconfiguring our machine in case of OS crash
 or even migrating to a new machine.
 
@@ -7,17 +6,14 @@ Dotfiles.rb is the simplest yet a very configurable dotfiles which is very helpf
 and we all need our own modifications and customizations. Customizing your dotfiles using the Dotfiles.rb is super easy you just have 1 file for your configurations (install.yml). It is inspired by YAML configuration of Ansible (easy and efficient).
 
 ## How to use it:
-=================
 1. Clone the repo
 2. run `ruby install.rb`
 3. Done !
 
 ## How to configure it:
-=======================
 The main part of the dotfiles is the `install.yml` file which will have all your configurations that you need.
 
 ##The structure of the `install.yml`
-=====================================
 ```
 main:
   # an array of commands to be prepended to every commands array in every package in the installs key useful for global exports
@@ -68,4 +64,5 @@ installs:
     - echo $v
 
 ```
-
+## known limitation:
+1. can't make partial updates on a dotfile

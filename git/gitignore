@@ -3,6 +3,12 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+/.idea
+/tags
+/coverage
+/doc
+/.yardoc
+Session.vim
 
 # Icon must end with two \r
 Icon
