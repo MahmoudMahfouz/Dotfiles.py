@@ -2,6 +2,15 @@ set hidden
 "Share the clipboard between vim and OS
 set clipboard=unnamed
 
+" Encoding
+set encoding=utf8
+
+" folding
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " tabs and spaces
 set tabstop=2
 set shiftwidth=2
@@ -40,6 +49,9 @@ set autoread
 
 " toggle to paste without indenting
 set pastetoggle=<F2>
+
+" Saves file when Vim window loses focus
+au FocusLost * :wa"
 
 set timeoutlen=500
 " KEY MAPPINGS "
@@ -88,7 +100,7 @@ nnoremap <leader>/ :Ag<SPACE>
 nnoremap <leader>f :Ag <cword><CR>
 
 " GENERAL "
-colorscheme blazer
+colorscheme glacier
 set background=dark
 map <Esc><Esc> :w<CR>
 
@@ -106,7 +118,7 @@ command Q q
 " Vim airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme='light'
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
 
@@ -146,11 +158,13 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup
 " go open and leave cursor in nt
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
 let g:NERDTreeMouseMode = 3
-map <Leader>nt :NERDTreeToggle<CR>
-map <Leader>nf :NERDTreeFind<CR>
+noremap <Leader>nt :NERDTreeToggle<CR>
+noremap <Leader>nf :NERDTreeFind<CR>
 
 " easy motion
+let g:EasyMotion_enter_jump_first=1
 let g:EasyMotion_smartcase = 1 " case insensitive matching
 let g:EasyMotion_use_smartsign_us = 1 " match 3 and #
 map / <Plug>(easymotion-sn)

@@ -29,6 +29,6 @@ redis
 scmpuff
 spark
 the_silver_searcher
-tmux
+tap choppsv1/term24 && brew install choppsv1/term24/tmux
 vim
 wget

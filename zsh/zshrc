@@ -105,33 +105,30 @@ source $ZSH/oh-my-zsh.sh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx ruby)
 # ZSH_THEME="solarized-powerline"
 eval "$(fasd --init auto)"
 eval "$(scmpuff init -s)"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+source "$ZSH/zgen/zgen.zsh"
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+    zgen oh-my-zsh
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+    # plugins
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/osx
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-powerline-config tmux setup
+	  zgen load djui/alias-tips
+    zgen load rimraf/k
+    zgen load unixorn/autoupdate-zgen
+	  zgen load unixorn/git-extra-commands
+    zgen load zsh-users/zsh-syntax-highlighting
+
+    # autosuggestions should be loaded last
+    zgen load tarruda/zsh-autosuggestions
+
+    # save all to init script
+    zgen save
+fi
