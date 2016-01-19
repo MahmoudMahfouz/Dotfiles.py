@@ -16,6 +16,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set backspace=2 " make backspace work like most other apps"
 
 "Write the old file out when switching between files.
 set autowrite
@@ -31,15 +32,12 @@ set number
 set smartindent
 set autoindent
 
-"Highlight searching
-set hlsearch
-
 " case insensitive search
 set ignorecase
 set smartcase
 
 " faster vim
-
+set synmaxcol=200
 set ttyfast
 set lazyredraw
 set re=1
@@ -100,11 +98,12 @@ nnoremap <leader>/ :Ag<SPACE>
 nnoremap <leader>f :Ag <cword><CR>
 
 " GENERAL "
-colorscheme glacier
+colorscheme obsidian
 set background=dark
 map <Esc><Esc> :w<CR>
 
 " Key mappings "
+map <leader>rt :SyntasticCheck<cr>              " Run the syntastic checks
 " space + w closes buffer
 nnoremap <leader>w :bw<CR>
 " space + q closes all
@@ -118,7 +117,7 @@ command Q q
 " Vim airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='light'
+let g:airline_theme='distinguished'
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
 
@@ -200,11 +199,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_mode_map = { "mode": "passive" }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
+let g:syntastic_ruby_exec = 'ruby'
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Python "
 let g:pymode_rope_goto_definition_bind = "<leader>pgd"
