@@ -149,6 +149,7 @@ installs:
     - export LANG=en_US.UTF-8
     - export TERM=screen-256color
     commands:
+    - export ZSH=$dotfiles_path'/zsh'
     - if [[ -e $ZSH ]]; then rm -rf $ZSH; fi
     - curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
     - cd $ZSH/themes
