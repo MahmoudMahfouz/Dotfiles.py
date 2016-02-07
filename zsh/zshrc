@@ -120,6 +120,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/osx
 
+    zgen load arialdomartini/oh-my-git
 	  zgen load djui/alias-tips
     zgen load rimraf/k
     zgen load unixorn/autoupdate-zgen
