@@ -7,8 +7,7 @@ root: ~/gdrive/z/projects/work/instabug/backend
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre:
-  - redis-server &
+# pre:
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -31,23 +30,26 @@ windows:
   - Commands:
       layout: even-horizontal
       panes:
-      - gs
-      - mysql.server start
+      -
+      -
 
-  - VIM + Tests:
+  - VIM+Tests:
       layout: 9e5d,238x67,0,0{163x67,0,0,11,74x67,164,0[74x33,164,0,12,74x33,164,34,13]}
       panes:
-      - vim
+      - shell_command:
+        - gf
+        - vim
       - guard
       - shell_command:
         - mkdir -p /var/run/mysqld/
         - ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
+        - mysql.server start
         - bin/rails s
   - Logs:
       layout: even-horizontal
       panes:
       - tail -f log/development.log
-      - tail -f log/development.log
+      - tail -f log/test.log
   - Servers:
       root: /Users/mm/gdrive/z/projects/work/instabug/backend
       layout: tiled
@@ -55,10 +57,14 @@ windows:
       - shell_command:
         - cd ..
         - cd webapp
+        - gf
         - grunt serve
-      - bundle exec sidekiq -q pusher_events
-      - zeus start
-      - ulimit -n 64000 && export ES_HEAP_SIZE=4096m && elasticsearch
+      - bundle exec sidekiq -q elasticsearch
+      - redis-server
+      - shell_command:
+        - ulimit -n 64000
+        - export ES_HEAP_SIZE=4096m
+        - elasticsearch
   - Top:
       root: /Users/mm/gdrive/z/projects/work/instabug/backend
       layout: tiled

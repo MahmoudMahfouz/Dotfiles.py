@@ -8,6 +8,7 @@ couchdb
 ctags-exuberant
 elasticsearch
 fasd
+gcc
 git
 go
 grc
