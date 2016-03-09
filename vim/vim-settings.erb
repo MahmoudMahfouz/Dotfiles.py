@@ -63,8 +63,8 @@ nnoremap <leader>tn  :tabnew<CR>
 nnoremap <leader>td  :tabclose<CR>
 
 " buffer managment
-map <C-x> :bp<cr>
-map <C-c> :bn<cr>
+map ∆ :bp<cr>
+map ˚ :bn<cr>
 
 "" windows
 noremap <C-h>              :wincmd h<cr>
@@ -77,10 +77,10 @@ noremap Â :call MaximizeToggle()<CR>
 nnoremap µ :call MaximizeToggle()<CR>
 
 " Move windows Mac only alt/hjkl
-noremap ˙              :wincmd H<cr>
-noremap ˚             :wincmd K<cr>
-noremap ¬              :wincmd L<cr>
-noremap ∆              :wincmd J<cr>
+noremap <leader>h :wincmd H<cr>
+noremap <leader>k :wincmd K<cr>
+noremap <leader>l :wincmd L<cr>
+noremap <leader>j :wincmd J<cr>
 
 "resize windows"
 nmap <left>  :3wincmd <<cr>
@@ -103,7 +103,7 @@ set background=dark
 map <Esc><Esc> :w<CR>
 
 " Key mappings "
-map <leader>tt :SyntasticCheck<cr>              " Run the syntastic checks
+
 " space + w closes buffer
 nnoremap <leader>w :bw<CR>
 " space + q closes all
@@ -113,6 +113,9 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+
+" Syntastic
+map <leader>tt :SyntasticCheck<cr>              " Run the syntastic checks
 
 " Vim airline
 set laststatus=2
@@ -167,11 +170,17 @@ let g:EasyMotion_enter_jump_first=1
 let g:EasyMotion_smartcase = 1 " case insensitive matching
 let g:EasyMotion_use_smartsign_us = 1 " match 3 and #
 map / <Plug>(easymotion-sn)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+" map <Leader>l <Plug>(easymotion-lineforward)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>h <Plug>(easymotion-linebackward)
 
+" Git Gutter
+nnoremap ]h :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
+nnoremap <Leader>hv :GitGutterPreviewHunk<CR>
+nnoremap <Leader>hr :GitGutterRevertHunk<CR>
+nnoremap <Leader>hs :GitGutterStageHunk<CR>
 
 " indent highlight activated with <leader>ig
 let g:indent_guides_guide_size = 1
@@ -234,6 +243,18 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " json "
 au BufRead,BufNewFile *.json setf json
+
+" beautify Mac only"
+map ƒ :call RangeJsBeautify()<cr>
+autocmd FileType javascript noremap <buffer> <leader>b :call RangeJsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <leader>b :call RangeJsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <leader>b :call RangeJsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <leader>b :call RangeHtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <leader>b :call RangeCSSBeautify()<cr>
 
 " FUNCTIONS
 function! MaximizeToggle()
