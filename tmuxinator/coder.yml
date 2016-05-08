@@ -1,7 +1,7 @@
-# ~/.tmuxinator/IBG.yml
+# ~/.tmuxinator/CODER.yml
 
-name: ibg
-root: ~/gdrive/z/projects/work/instabug/backend
+name: coder
+root: ~/Downloads/z-labs/algorithms-TC
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,47 +27,22 @@ root: ~/gdrive/z/projects/work/instabug/backend
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t IBG
 windows:
-  - Logs:
-      layout: even-horizontal
+  - Commands:
+      layout: tiled
       panes:
-      - tail -f log/development.log
-      - tail -f log/test.log
+      -
+      -
+      -
+      -
+
   - VIM+Tests:
       layout: 9e5d,238x67,0,0{163x67,0,0,11,74x67,164,0[74x33,164,0,12,74x33,164,34,13]}
       panes:
       - shell_command:
         - gf
         - vim
-      - guard
-      - shell_command:
-        - mkdir -p /var/run/mysqld/
-        - ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
-        - mysql.server start
-        - bin/rails s
-
-  - SSH:
-      layout: tiled
-      panes:
       -
       -
-      -
-      -
-  - Servers:
-      root: /Users/mm/gdrive/z/projects/work/instabug/backend
-      layout: tiled
-      panes:
-      - shell_command:
-        - cd ..
-        - cd webapp
-        - gf
-        - grunt serve
-      - bundle exec sidekiq -q elasticsearch
-      -
-      - shell_command:
-        - ulimit -n 64000
-        - export ES_HEAP_SIZE=4096m
-        - redis-server &
-        - elasticsearch &
   - Top:
       root: /Users/mm/gdrive/z/projects/work/instabug/backend
       layout: tiled

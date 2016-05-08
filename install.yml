@@ -115,6 +115,9 @@ installs:
 
   tmuxinator:
     .files:
+      coder.yml:
+        path: tmuxinator/coder.yml
+        sym: ~/.tmuxinator/
       ibg.yml:
         path: tmuxinator/ibg.yml
         sym: ~/.tmuxinator/

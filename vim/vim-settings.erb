@@ -6,7 +6,7 @@ set clipboard=unnamed
 set encoding=utf8
 
 " folding
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -53,7 +53,12 @@ au FocusLost * :wa"
 
 set timeoutlen=500
 " KEY MAPPINGS "
-
+  nnoremap <Leader>y "+yy
+  nnoremap <Leader>d "+dd
+  noremap  <Leader>p "+p
+  noremap  <Leader>P "+P
+  vnoremap <Leader>y "+y
+  vnoremap <Leader>d "+d
 " Workflow
 set hidden
 "" tabs (should be changed to not conflict with till command)
@@ -63,8 +68,8 @@ nnoremap <leader>tn  :tabnew<CR>
 nnoremap <leader>td  :tabclose<CR>
 
 " buffer managment
-map ∆ :bp<cr>
-map ˚ :bn<cr>
+map ˙ :bp<cr>
+map ¬ :bn<cr>
 
 "" windows
 noremap <C-h>              :wincmd h<cr>
@@ -87,7 +92,7 @@ nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
-map <C-m> :tabedit %<CR>
+map <leader>m :tabedit %<CR>
 
 "Map escape key to jj -- much faster
 imap jj <esc>
@@ -98,7 +103,7 @@ nnoremap <leader>/ :Ag<SPACE>
 nnoremap <leader>f :Ag <cword><CR>
 
 " GENERAL "
-colorscheme koehler
+colorscheme cobalt2
 set background=dark
 map <Esc><Esc> :w<CR>
 
@@ -120,7 +125,7 @@ map <leader>tt :SyntasticCheck<cr>              " Run the syntastic checks
 " Vim airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='distinguished'
+" let g:airline_theme='distinguished'
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
 
