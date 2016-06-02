@@ -1,3 +1,9 @@
+alias ibg-db-prod-tunnel='ssh -N -L 3306:aa8o1llydl3buj.ce9v7nhsom75.us-east-1.rds.amazonaws.com:3306 ibg-prod'
+
+alias ibg-redis-prod-tunnel='ssh -N -L 6379:instabug-prod-small.82kv5k.0001.use1.cache.amazonaws.com:6739 ibg-prod'
+
+alias ibg-es-prod-tunnel='ssh -L 9201:172.31.28.89:9200 ibg-es1'
+
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
