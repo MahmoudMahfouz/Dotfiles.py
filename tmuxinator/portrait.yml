@@ -7,10 +7,10 @@ root: ~/gdrive/z/projects/work/instabug/backend
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# pre:
+pre: dinghy restart
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window: eval $(dinghy env)
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -33,48 +33,23 @@ windows:
       - tail -f log/development.log
       - tail -f log/test.log
   - VIM+Tests:
-      layout: 9e5d,238x67,0,0{163x67,0,0,11,74x67,164,0[74x33,164,0,12,74x33,164,34,13]}
+      layout: f0c3,133x104,0,0[133x52,0,0{66x52,0,0,2,66x52,67,0,8},133x52,0,53{66x52,0,53,9,66x52,67,53,10}]
       panes:
       - shell_command:
         - gf
         - vim
-      - guard
       - shell_command:
-        - mkdir -p /var/run/mysqld/
-        - ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
-        - mysql.server start
-        - bin/rails s
-
-  - SSH:
+        - sleep 5
+        - docker-compose up -d test && docker attach backend_test_1
+      - shell_command:
+        - docker-compose up -d database
+        - sleep 5
+        - docker-compose up sidekiq
+        - docker-compose up -d web && docker attach backend_web_1
+  - tiled:
       layout: tiled
       panes:
       -
       -
       -
       -
-  - Servers:
-      root: /Users/mm/gdrive/z/projects/work/instabug/backend
-      layout: tiled
-      panes:
-      - shell_command:
-        - cd ..
-        - cd webapp
-        - gf
-        - grunt serve
-      - bundle exec sidekiq -q elasticsearch
-      -
-      - shell_command:
-        - ulimit -n 64000
-        - export ES_HEAP_SIZE=4096m
-        - redis-server &
-        - elasticsearch &
-  - Top:
-      root: /Users/mm/gdrive/z/projects/work/instabug/backend
-      layout: tiled
-      panes:
-      -
-      -
-      -
-      -
-
-

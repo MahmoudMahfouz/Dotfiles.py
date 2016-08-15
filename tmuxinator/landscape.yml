@@ -1,0 +1,55 @@
+# ~/.tmuxinator/IBG.yml
+
+name: ibg
+root: ~/gdrive/z/projects/work/instabug/backend
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+pre: dinghy restart
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: eval $(dinghy env)
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t IBG
+windows:
+  - Logs:
+      layout: even-horizontal
+      panes:
+      - tail -f log/development.log
+      - tail -f log/test.log
+  - VIM+Tests:
+      layout: 9e5d,238x67,0,0{163x67,0,0,11,74x67,164,0[74x33,164,0,12,74x33,164,34,13]}
+      panes:
+      - shell_command:
+        - gf
+        - vim
+      - shell_command:
+        - sleep 5
+        - docker-compose up -d test && docker attach backend_test_1
+      - shell_command:
+        - docker-compose up -d database
+        - sleep 5
+        - docker-compose up sidekiq
+        - docker-compose up -d web && docker attach backend_web_1
+  - tiled:
+      layout: tiled
+      panes:
+      -
+      -
+      -
+      -
