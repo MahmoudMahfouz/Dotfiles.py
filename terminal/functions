@@ -3,6 +3,11 @@ function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
+add-alias () {
+  echo "alias" $1'="'$2'"' >> ~/.dotfiles/.aliases;
+  source ~/.dotfiles/.aliases;
+}
+
 
 # find shorthand
 function f() {

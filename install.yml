@@ -118,8 +118,11 @@ installs:
       coder.yml:
         path: tmuxinator/coder.yml
         sym: ~/.tmuxinator/
-      ibg.yml:
-        path: tmuxinator/ibg.yml
+      landscape.yml:
+        path: tmuxinator/landscape.yml
+        sym: ~/.tmuxinator/
+      portrait.yml:
+        path: tmuxinator/portrait.yml
         sym: ~/.tmuxinator/
   vim:
     .files: # will use erb_vars from the current object

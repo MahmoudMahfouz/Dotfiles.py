@@ -7,7 +7,7 @@ root: ~/gdrive/z/projects/work/instabug/backend
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: dinghy restart
+# pre: dinghy restart
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 pre_window: eval $(dinghy env)
