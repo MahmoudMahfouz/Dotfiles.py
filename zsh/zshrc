@@ -48,7 +48,6 @@ else
   export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=:ow=:"
 fi
 
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -100,6 +99,14 @@ source $dotfiles_path/.exports
 source $dotfiles_path/.functions
 source $dotfiles_path/.prompt
 source $ZSH/oh-my-zsh.sh
+
+# for vim inside tmux to not have background mismatch
+if [[ -z $TMUX ]]; then
+    export TERM='xterm-256color'
+else
+    export TERM='screen-256color'
+fi
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

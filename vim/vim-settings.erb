@@ -8,6 +8,10 @@ set encoding=utf8
 "" To make docker file events work
 set backupcopy=yes
 
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " folding
 set foldmethod=indent
 set foldnestmax=10
@@ -106,7 +110,7 @@ nnoremap <leader>/ :Ag<SPACE>
 nnoremap <leader>f :Ag <cword><CR>
 
 " GENERAL "
-colorscheme cobalt2
+colorscheme one
 set background=dark
 map <Esc><Esc> :w<CR>
 
@@ -128,7 +132,7 @@ map <leader>tt :SyntasticCheck<cr>              " Run the syntastic checks
 " Vim airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='distinguished'
+let g:airline_theme='one'
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
 
