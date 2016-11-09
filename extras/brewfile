@@ -18,6 +18,7 @@ htop
 iftop
 imagemagick
 iotop
+iterm2
 mariadb
 memcached
 mongodb
@@ -30,6 +31,7 @@ redis
 scmpuff
 spark
 the_silver_searcher
-tap choppsv1/term24 && brew install choppsv1/term24/tmux
+tmux
+tmux-mem-cpu-load
 vim
 wget

@@ -101,11 +101,7 @@ source $dotfiles_path/.prompt
 source $ZSH/oh-my-zsh.sh
 
 # for vim inside tmux to not have background mismatch
-if [[ -z $TMUX ]]; then
-    export TERM='xterm-256color'
-else
-    export TERM='screen-256color'
-fi
+export TERM='screen-256color'
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
