@@ -23,8 +23,10 @@ flux
 gas-mask
 genymotion
 google-chrome
+google-drive
 google-earth
 google-earth-web-plugin
+google-photos-backup
 intellij-idea-ce
 istat-menus
 iterm2-nightly
@@ -32,6 +34,7 @@ java
 karabiner
 kaleidoscope
 limechat
+macdown
 meld
 mongo-management-studio
 mysqlworkbench
