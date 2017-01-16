@@ -111,6 +111,7 @@ export TERM='screen-256color'
 # ZSH_THEME="solarized-powerline"
 eval "$(fasd --init auto)"
 eval "$(scmpuff init -s)"
+eval "$(ssh-agent)"
 
 source "$ZSH/zgen/zgen.zsh"
 

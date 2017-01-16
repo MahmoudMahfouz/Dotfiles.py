@@ -19,6 +19,7 @@ iftop
 imagemagick
 iotop
 iterm2
+jq
 mariadb
 memcached
 mongodb
