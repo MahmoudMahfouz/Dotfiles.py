@@ -76,8 +76,8 @@ installs:
     commands:
     - export version=2.1.2
     - git clone https://github.com/sstephenson/rbenv.git $rbenv_path
-    - rbenv install $version
-    - rbenv global $version
+    - git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+    - export rbenv_path=$rbenv_path && export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH && rbenv install $version && rbenv global $version
 
   pyenv:
     .exports:
@@ -88,9 +88,7 @@ installs:
     commands:
     - export version=2.7.8
     - if [ ! -d $pyenv_path ]; then git clone git://github.com/yyuu/pyenv.git $pyenv_path; fi
-    - pyenv install $version
-    - pyenv rehash
-    - pyenv global $version
+    - export PYENV_ROOT=$pyenv_path && export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH && pyenv install $version && pyenv rehash && pyenv global $version
 
   terminal:
     .files:
@@ -162,5 +160,5 @@ installs:
     - git clone https://github.com/KuoE0/oh-my-zsh-solarized-powerline-theme.git solarized-powerline
     - cd solarized-powerline
     - ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
-    - cd ~/Library/Fonts && curl -fLo InconsolataPowerlineNerdfonts.otf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20for%20Powerline%20Nerd%20Font%20Complete%20Mono.otf
+    - cd ~/Library/Fonts && curl -fLo InconsolataPowerlineNerdfonts.otf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete%20Mono.otf
     - cd $ZSH/ && git clone https://github.com/tarjoilija/zgen.git
