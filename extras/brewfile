@@ -25,6 +25,7 @@ memcached
 mongodb
 moreutils
 mtop
+neovim
 nginx
 install openssl && brew link --force openssl
 reattach-to-user-namespace
