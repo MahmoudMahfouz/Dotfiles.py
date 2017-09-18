@@ -59,7 +59,7 @@ class Helper
       path = File.join(Dir.pwd, 'dst', file_name)
       # TODO: separate method
       unless File.exist? path
-        unexpanded_path = paths.has_key?(file_name) ? paths[filename] : paths['default']
+        unexpanded_path = paths.has_key?(file_name) ? paths[file_name] : paths['default']
         expanded_sym_path = File.expand_path(unexpanded_path)
         sym_ln = File.join(expanded_sym_path, file_name)
         FileUtils.mkdir_p expanded_sym_path

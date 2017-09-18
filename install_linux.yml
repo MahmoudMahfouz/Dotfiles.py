@@ -6,19 +6,15 @@ main:
   - export pyenv_path=$HOME/.pyenv
   - export rbenv_path=$HOME/.rbenv
   - export vim_path=$dotfiles_path/.vim
+  - sudo apt-get update
   options:
     execute: false
     vim_path: $dotfiles_path/.vim
 
   extras:
-    # Brew package(s):
-    #   command: brew install
-    #   file: extras/brewfile
-    # Cask program(s):
-    #   command: brew cask install
-    #   file: extras/caskfile
-    # Defaults settings (Mac OSX):
-    #   file: extras/defaultsfile
+    APT package(s):
+      command: sudo apt install -y
+      file: extras/aptfile
     Gem(s):
       command: gem install
       file: extras/gemfile
@@ -30,7 +26,7 @@ main:
       file: extras/pipfile
   paths:
     default: ~/.dotfiles
-    .zshrc: ~/
+    .bashrc: ~/
 
 installs:
   else:
@@ -41,9 +37,6 @@ installs:
       tmux-conf:
         path: general/tmux.conf
         sym: ~/
-    # commands:
-    # - xcode-select --install
-    # - ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 
   git:
     .files:
@@ -59,7 +52,7 @@ installs:
       editor: vim
 
   nvm:
-    .zshrc:
+    .bashrc:
     - source "$nvm_path/nvm.sh"
     commands:
     - export version=0.11.0
@@ -74,7 +67,7 @@ installs:
     .exports:
     - export rbenv_path=$rbenv_path
     commands:
-    - export version=2.1.2
+    - export version=2.4.2
     - git clone https://github.com/sstephenson/rbenv.git $rbenv_path
     - git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
     - export rbenv_path=$rbenv_path && export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH && rbenv install $version && rbenv global $version
@@ -83,12 +76,15 @@ installs:
     .exports:
     - export PYENV_ROOT=$pyenv_path
     - export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
-    .zshrc:
+    .bashrc:
     - eval "$(pyenv init -)"
+    - echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_rc
+    - echo 'pyenv activate v_env_3.6.2' >> ~/.bash_rc
     commands:
-    - export version=2.7.8
+    - export version=3.6.2
     - if [ ! -d $pyenv_path ]; then git clone git://github.com/yyuu/pyenv.git $pyenv_path; fi
     - export PYENV_ROOT=$pyenv_path && export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH && pyenv install $version && pyenv rehash && pyenv global $version
+    - git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 
   terminal:
     .files:
@@ -134,31 +130,28 @@ installs:
     - export vim_path=$vim_path
     - export EDITOR=vim
     commands:
-    - if [[ -e $vim_path/bundle ]]; then rm -rf $vim_path/bundle; fi
+    - if [ -e $vim_path/bundle ]; then rm -rf $vim_path/bundle; fi
     - git clone https://github.com/gmarik/Vundle.vim.git $vim_path/bundle/Vundle.vim
     erb_vars:
       vim_path: $dotfiles_path/.vim
       dotfiles_path: $dotfiles_path
 
-  zsh:
+  bash:
     .files:
-      zshrc:
-        path: zsh/zshrc
+      bashrc:
+        path: bash/bashrc
         sym: ~/
     .exports:
-    - export ZSH=$dotfiles_path'/zsh'
-    - export ZSH_THEME="pygmalion"
+    - export BASH=$dotfiles_path'/bash'
+    - export BASH_THEME="pygmalion"
     - export powerline="$HOME/.local/lib/python2.7/site-packages/powerline"
     - export LC_ALL=en_US.UTF-8
     - export LANG=en_US.UTF-8
     - export TERM=screen-256color
+    - export PATH=$PATH:$HOME/.bin
     commands:
-    - export ZSH=$dotfiles_path'/zsh'
-    - if [[ -e $ZSH ]]; then rm -rf $ZSH; fi
-    - curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-    - cd $ZSH/themes
-    - git clone https://github.com/KuoE0/oh-my-zsh-solarized-powerline-theme.git solarized-powerline
-    - cd solarized-powerline
-    - ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
-    - cd ~/Library/Fonts && curl -fLo InconsolataPowerlineNerdfonts.otf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete%20Mono.otf
-    - cd $ZSH/ && git clone https://github.com/tarjoilija/zgen.git
+    - export BASH=$dotfiles_path'/bash'
+    - if [ -e $BASH ]; then rm -rf $BASH; fi
+    - sudo bash -c "echo 'set completion-ignore-case on' >> /etc/inputrc"
+    - git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh && source ~/.bashrc
+    - echo "c.InteractiveShellApp.extensions = ['autoreload'] \n c.InteractiveShellApp.exec_lines = ['%autoreload 2']" > ~/.ipython/profile_default/ipython_config.py

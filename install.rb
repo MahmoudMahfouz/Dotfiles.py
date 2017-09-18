@@ -4,8 +4,20 @@ require 'ostruct'
 require 'fileutils'
 require './helper'
 
+module OS
+  def OS.mac?
+   (/darwin/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def OS.linux?
+   (/linux/ =~ RUBY_PLATFORM) != nil
+  end
+end
+
+conf_path = OS.mac? ? 'install_mac.yml' : 'install_linux.yml'
+
 h = Helper.new
-conf = YAML.load_file('install.yml')
+conf = YAML.load_file(conf_path)
 
 # export some variables that will be prepended to every command running
 # useful as nvm_path, ruby_path,...

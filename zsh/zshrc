@@ -99,7 +99,6 @@ source $dotfiles_path/.exports
 source $dotfiles_path/.functions
 source $dotfiles_path/.prompt
 source $ZSH/oh-my-zsh.sh
-source ~/envs/devops/bin/activate
 
 # for vim inside tmux to not have background mismatch
 export TERM='screen-256color'

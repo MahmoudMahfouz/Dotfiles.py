@@ -1,0 +1,165 @@
+main:
+  # Use it as global variables they are prepended with every install
+  commands:
+  - export dotfiles_path=$HOME/.dotfiles
+  - export nvm_path=$HOME/.nvm
+  - export pyenv_path=$HOME/.pyenv
+  - export rbenv_path=$HOME/.rbenv
+  - export vim_path=$dotfiles_path/.vim
+  options:
+    execute: false
+    vim_path: $dotfiles_path/.vim
+
+  extras:
+    # Brew package(s):
+    #   command: brew install
+    #   file: extras/brewfile
+    # Cask program(s):
+    #   command: brew cask install
+    #   file: extras/caskfile
+    # Defaults settings (Mac OSX):
+    #   file: extras/defaultsfile
+    Gem(s):
+      command: gem install
+      file: extras/gemfile
+    npm(s):
+      command: source $nvm_path/nvm.sh && npm i -g
+      file: extras/npmfile
+    pip(s):
+      command: pip install
+      file: extras/pipfile
+  paths:
+    default: ~/.dotfiles
+    .zshrc: ~/
+
+installs:
+  else:
+    .files:
+      editor:
+        path: general/editorconfig
+        sym: ~/
+      tmux-conf:
+        path: general/tmux.conf
+        sym: ~/
+    # commands:
+    # - xcode-select --install
+    # - ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+
+  git:
+    .files:
+      gitconfig:
+        path: git/gitconfig.erb
+        sym: ~/
+      gitignore:
+        path: git/gitignore
+        sym: ~/
+    erb_vars:
+      name: Mahmoud Mahfouz
+      email: mahmoud.mahfouz.zaza@gmail.com
+      editor: vim
+
+  nvm:
+    .zshrc:
+    - source "$nvm_path/nvm.sh"
+    commands:
+    - export version=0.11.0
+    - curl https://raw.githubusercontent.com/creationix/nvm/v0.22.0/install.sh | NVM_DIR=$nvm_path bash
+    - source $nvm_path/nvm.sh
+    - nvm install stable
+    - nvm install $version
+    - nvm use $version
+    - nvm alias default $version
+
+  rbenv:
+    .exports:
+    - export rbenv_path=$rbenv_path
+    commands:
+    - export version=2.4.2
+    - git clone https://github.com/sstephenson/rbenv.git $rbenv_path
+    - git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+    - export rbenv_path=$rbenv_path && export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH && rbenv install $version && rbenv global $version
+
+  pyenv:
+    .exports:
+    - export PYENV_ROOT=$pyenv_path
+    - export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
+    .zshrc:
+    - eval "$(pyenv init -)"
+    - eval "$(pyenv virtualenv-init -)"
+    commands:
+    - export version=3.6.2
+    - if [ ! -d $pyenv_path ]; then git clone git://github.com/yyuu/pyenv.git $pyenv_path; fi
+    - export PYENV_ROOT=$pyenv_path && export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH && pyenv install $version && pyenv rehash && pyenv global $version
+
+  terminal:
+    .files:
+      aliases:
+        path: terminal/aliases
+        sym: ~/.dotfiles
+      functions:
+        path: terminal/functions
+        sym: ~/.dotfiles
+      profile:
+        path: terminal/profile
+        sym: ~/.dotfiles
+      prompt:
+        path: terminal/prompt
+        sym: ~/.dotfiles
+    .exports:
+    - export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.3.3/
+    - export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+    - export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+    - export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH
+    - export PATH=/opt/chefdk/bin:$PATH
+
+  tmuxinator:
+    .files:
+      coder.yml:
+        path: tmuxinator/coder.yml
+        sym: ~/.tmuxinator/
+      landscape.yml:
+        path: tmuxinator/landscape.yml
+        sym: ~/.tmuxinator/
+      portrait.yml:
+        path: tmuxinator/portrait.yml
+        sym: ~/.tmuxinator/
+  vim:
+    .files: # will use erb_vars from the current object
+      vimrc:
+        path: vim/vimrc.erb
+        sym: ~/
+      vim-settings:
+        path: vim/vim-settings.erb
+        sym: ~/.dotfiles
+    .exports:
+    - export vim_path=$vim_path
+    - export EDITOR=vim
+    commands:
+    - if [[ -e $vim_path/bundle ]]; then rm -rf $vim_path/bundle; fi
+    - git clone https://github.com/gmarik/Vundle.vim.git $vim_path/bundle/Vundle.vim
+    erb_vars:
+      vim_path: $dotfiles_path/.vim
+      dotfiles_path: $dotfiles_path
+
+  zsh:
+    .files:
+      zshrc:
+        path: zsh/zshrc
+        sym: ~/
+    .exports:
+    - export ZSH=$dotfiles_path'/zsh'
+    - export ZSH_THEME="pygmalion"
+    - export powerline="$HOME/.local/lib/python2.7/site-packages/powerline"
+    - export LC_ALL=en_US.UTF-8
+    - export LANG=en_US.UTF-8
+    - export TERM=screen-256color
+    commands:
+    - export ZSH=$dotfiles_path'/zsh'
+    - if [[ -e $ZSH ]]; then rm -rf $ZSH; fi
+    - curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    - cd $ZSH/themes
+    - git clone https://github.com/KuoE0/oh-my-zsh-solarized-powerline-theme.git solarized-powerline
+    - cd solarized-powerline
+    - ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
+    - cd ~/Library/Fonts && curl -fLo InconsolataPowerlineNerdfonts.otf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete%20Mono.otf
+    - cd $ZSH/ && git clone https://github.com/tarjoilija/zgen.git
