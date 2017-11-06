@@ -37,6 +37,9 @@ installs:
       tmux-conf:
         path: general/tmux.conf
         sym: ~/
+    # commands:
+    # - xcode-select --install
+    # - ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 
   git:
     .files:
@@ -78,8 +81,7 @@ installs:
     - export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
     .bashrc:
     - eval "$(pyenv init -)"
-    - echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_rc
-    - echo 'pyenv activate v_env_3.6.2' >> ~/.bash_rc
+    - echo 'eval "$(pyenv virtualenv-init -)"'
     commands:
     - export version=3.6.2
     - if [ ! -d $pyenv_path ]; then git clone git://github.com/yyuu/pyenv.git $pyenv_path; fi
@@ -130,7 +132,7 @@ installs:
     - export vim_path=$vim_path
     - export EDITOR=vim
     commands:
-    - if [ -e $vim_path/bundle ]; then rm -rf $vim_path/bundle; fi
+    - if [[ -e $vim_path/bundle ]]; then rm -rf $vim_path/bundle; fi
     - git clone https://github.com/gmarik/Vundle.vim.git $vim_path/bundle/Vundle.vim
     erb_vars:
       vim_path: $dotfiles_path/.vim
@@ -148,10 +150,6 @@ installs:
     - export LC_ALL=en_US.UTF-8
     - export LANG=en_US.UTF-8
     - export TERM=screen-256color
-    - export PATH=$PATH:$HOME/.bin
     commands:
     - export BASH=$dotfiles_path'/bash'
-    - if [ -e $BASH ]; then rm -rf $BASH; fi
-    - sudo bash -c "echo 'set completion-ignore-case on' >> /etc/inputrc"
-    - git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh && source ~/.bashrc
-    - echo "c.InteractiveShellApp.extensions = ['autoreload'] \n c.InteractiveShellApp.exec_lines = ['%autoreload 2']" > ~/.ipython/profile_default/ipython_config.py
+    - if [[ -e $BASH ]]; then rm -rf $BASH; fi
