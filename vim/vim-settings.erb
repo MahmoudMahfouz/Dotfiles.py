@@ -233,6 +233,7 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:pymode_rope_goto_definition_bind = "<leader>pgd"
 let g:pymode_run_bind = "<leader>pr"
 let g:pymode_doc_bind = "<leader>pd"
+autocmd BufWritePost *.py call Flake8()
 
 " GO "
 au FileType go nmap <Leader>gd <Plug>(go-doc)

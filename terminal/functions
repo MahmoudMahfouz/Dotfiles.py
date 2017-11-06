@@ -1,100 +1,49 @@
-ssh_ibg() {
-  ssh -i ~/.ssh/instabug2.pem $1@$2
+hey_bastions() {
+  open_ssh_to_bastions $1 ~/.ssh/id_ed25519 mahmoud
 }
 
-sshprod() {
-  filter_name="instabug-env-api"
-  SSH_HOSTS=$(ec2_public_ips $filter_name)
-
-  open_sshes $SSH_HOSTS ec2-user ~/.ssh/instabug2.pem ssh_prod
+hey_bastions_ubuntu() {
+  open_ssh_to_bastions $1 ~/.ssh/id_ed25519 ubuntu
 }
 
-sshprod_first() {
-  filter_name="instabug-env-api"
-  SSH_HOSTS=$(ec2_public_ips $filter_name | cut -d' ' -f 1)
-
-  open_sshes $SSH_HOSTS ec2-user ~/.ssh/instabug2.pem ssh_prod
-}
-
-sshprod_es() {
-  filter_name="BE - Production - es-masters-v2"
-  SSH_HOSTS=$(ec2_public_ips $filter_name)
-
-  open_sshes $SSH_HOSTS ubuntu ~/.ssh/instabug2.pem ssh_es
-}
-
-sshprod_bp() {
-  filter_name="BE - Production - bp"
-  SSH_HOSTS=$(ec2_public_ips $filter_name)
-
-  open_sshes $SSH_HOSTS ubuntu ~/.ssh/instabug2.pem ssh_bp
-}
-
-sshprod_all() {
-  sshprod
-  sshprod_es
-  sshprod_bp
-}
-
-sshdcos() {
-  filter_name="DCOS Master node"
-  SSH_HOSTS=$(ec2_public_ips $filter_name)
-
-  open_sshes $SSH_HOSTS core ~/.ssh/instabug2.pem ssh_dcos_masters
-}
-
-sshdcos_slaves() {
-  filter_name="DCOS Master node"
-  master_host=$(ec2_public_ips $filter_name | cut -d' ' -f 1)
-
-  prefix="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -t -i ~/.ssh/instabug2.pem core@$master_host"
-
-  filter_name="DCOS Slave node"
-  SSH_HOSTS=$(ec2_private_ips $filter_name)
-
-  open_sshes $SSH_HOSTS core instabug2.pem ssh_dcos_slaves $prefix
-}
-
-sshdcos_pslaves() {
-  filter_name="DCOS Public slave node"
-  SSH_HOSTS=$(ec2_public_ips $filter_name)
-
-  open_sshes $SSH_HOSTS core ~/.ssh/instabug2.pem ssh_dcos_public_slaves
-}
-
-sshdcos_all() {
-  sshdcos
-  sshdcos_slaves
-  sshdcos_pslaves
-}
-
-ec2_public_ips() {
-  aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" | jq '.Reservations[] | .Instances[] | .PublicIpAddress' | sed 's/\"//g' | tr '\n' ' '
-}
-
-ec2_private_ips() {
-  aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" | jq '.Reservations[] | .Instances[] | .PrivateIpAddress' | sed 's/\"//g' | tr '\n' ' '
-}
-
-open_sshes() {
-  tmux new-window -n $4
+open_ssh_to_bastions() {
+  tmux new-window -n AWS_Bastions
 
   setopt sh_word_split
-  hosts=(${(ps: :)${1}})
+  regions=(${(ps:,:)${1}})
   unsetopt sh_word_split
 
-  for i in "${hosts[@]}"; do
-    if [[ "$i" == null ]]; then
+  for i in "${regions[@]}"; do
+    ips=$(get_ip_bastion $i)
+    if [[ "$ips" == null ]]; then
       continue
     fi
-    cmd="$5 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $3 $2@$i"
-    echo $cmd
-    tmux split-window -h $cmd
-    tmux select-layout tiled > /dev/null
+
+    setopt sh_word_split
+    ips=(${(ps: :)${ips}})
+    unsetopt sh_word_split
+
+    for j in "${ips[@]}"; do
+      cmd="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $2 $3@$j"
+
+      echo $cmd
+      tmux split-window -h $cmd
+      tmux select-layout tiled > /dev/null
+    done
   done
 
   tmux kill-pane -t 1
   tmux set-window-option synchronize-panes on > /dev/null
+}
+
+get_ip_bastion() {
+  if [ -z "$2" ]; then
+    query=*bastion*
+  else
+    query=$2
+  fi
+
+  aws ec2 describe-instances --region $1 --filters "Name=tag:Name,Values=$query" | jq '.Reservations[] | .Instances[] | .PublicIpAddress' | awk '{gsub(/(null|"|\r\n)/,""); print}' | xargs
 }
 
 # Create a new directory and enter it
