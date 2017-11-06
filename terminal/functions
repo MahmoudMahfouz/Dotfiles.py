@@ -7,33 +7,50 @@ hey_bastions_ubuntu() {
 }
 
 open_ssh_to_bastions() {
-  tmux new-window -n AWS_Bastions
-
   setopt sh_word_split
   regions=(${(ps:,:)${1}})
   unsetopt sh_word_split
 
+  # regions loop
   for i in "${regions[@]}"; do
-    ips=$(get_ip_bastion $i)
-    if [[ "$ips" == null ]]; then
-      continue
+    echo "region: $i"
+
+    setopt sh_word_split
+    arr=(${(ps:/:)${i}})
+    unsetopt sh_word_split
+    i=$arr[1]
+    times=$arr[2]
+
+    if [ -z "$arr[2]" ]; then
+      times=1
     fi
+
+    ips=$(get_ip_bastion $i)
 
     setopt sh_word_split
     ips=(${(ps: :)${ips}})
     unsetopt sh_word_split
 
+    # ip per region loop
     for j in "${ips[@]}"; do
-      cmd="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $2 $3@$j"
+      tmux new-window -n aws_bastions-"$i@$j-X-$times"
+      if [[ "$j" == null ]]; then
+        continue
+      fi
 
+      cmd="ssh -o userknownhostsfile=/dev/null -o stricthostkeychecking=no -i $2 $3@$j"
       echo $cmd
-      tmux split-window -h $cmd
-      tmux select-layout tiled > /dev/null
+
+      # multiplier loop
+      for k in {1..$times}; do
+        tmux split-window -h $cmd
+        tmux select-layout tiled > /dev/null
+      done
+
+      tmux kill-pane -t 1
+      tmux set-window-option synchronize-panes on > /dev/null
     done
   done
-
-  tmux kill-pane -t 1
-  tmux set-window-option synchronize-panes on > /dev/null
 }
 
 get_ip_bastion() {

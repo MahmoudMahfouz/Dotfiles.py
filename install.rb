@@ -57,7 +57,7 @@ extras.each_key.with_index do |k, i|
   next unless selected_installs.include? (counter).to_s
   puts "Now Installing #{k}"
   puts "=========================="
-  puts extras
+  puts extras[k]
   h.install_extras extras[k]
   puts "Done"
 end

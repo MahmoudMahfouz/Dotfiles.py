@@ -2,8 +2,8 @@ main:
   # Use it as global variables they are prepended with every install
   commands:
   - export dotfiles_path=$HOME/.dotfiles
-  - export nvm_path=$HOME/.nvm
   - export pyenv_path=$HOME/.pyenv
+  - export nodenv_path=$HOME/.nodenv
   - export rbenv_path=$HOME/.rbenv
   - export vim_path=$dotfiles_path/.vim
   - sudo apt-get update
@@ -13,13 +13,13 @@ main:
 
   extras:
     APT package(s):
-      command: sudo apt install -y
+      command: sudo apt-get update && sudo apt install -y
       file: extras/aptfile
     Gem(s):
       command: gem install
       file: extras/gemfile
     npm(s):
-      command: source $nvm_path/nvm.sh && npm i -g
+      command: npm i -g
       file: extras/npmfile
     pip(s):
       command: pip install
@@ -54,21 +54,23 @@ installs:
       email: mahmoud.mahfouz.zaza@gmail.com
       editor: vim
 
-  nvm:
+  nodenv:
+    .exports:
+    - export nodenv_path=$nodenv_path
+    - export PATH="$nodenv_path/bin:$PATH"
     .bashrc:
-    - source "$nvm_path/nvm.sh"
+    - eval "$(nodenv init -)"
     commands:
-    - export version=0.11.0
-    - curl https://raw.githubusercontent.com/creationix/nvm/v0.22.0/install.sh | NVM_DIR=$nvm_path bash
-    - source $nvm_path/nvm.sh
-    - nvm install stable
-    - nvm install $version
-    - nvm use $version
-    - nvm alias default $version
+    - export version=8.9.0
+    - git clone https://github.com/nodenv/nodenv.git $nodenv_path
+    - git clone https://github.com/nodenv/node-build.git $nodenv_path/plugins/node-build
+    - export nodenv_path=$nodenv_path && export PATH=$nodenv_path/bin:$PATH && nodenv install $version && nodenv global $version
 
   rbenv:
     .exports:
     - export rbenv_path=$rbenv_path
+    .bashrc:
+    - eval "$(rbenv init -)"
     commands:
     - export version=2.4.2
     - git clone https://github.com/sstephenson/rbenv.git $rbenv_path
@@ -132,7 +134,7 @@ installs:
     - export vim_path=$vim_path
     - export EDITOR=vim
     commands:
-    - if [[ -e $vim_path/bundle ]]; then rm -rf $vim_path/bundle; fi
+    - if [ -e $vim_path/bundle ]; then rm -rf $vim_path/bundle; fi
     - git clone https://github.com/gmarik/Vundle.vim.git $vim_path/bundle/Vundle.vim
     erb_vars:
       vim_path: $dotfiles_path/.vim
@@ -150,6 +152,8 @@ installs:
     - export LC_ALL=en_US.UTF-8
     - export LANG=en_US.UTF-8
     - export TERM=screen-256color
+    - export PATH=$PATH:$HOME/.bin
     commands:
     - export BASH=$dotfiles_path'/bash'
-    - if [[ -e $BASH ]]; then rm -rf $BASH; fi
+    - if [ -e $BASH ]; then rm -rf $BASH; fi
+    - mkdir $HOME/.bin/ && curl -L `curl -s https://api.github.com/repos/mroth/scmpuff/releases/latest | grep "browser_download_url" | grep linux | grep 64 | cut -d : -f 2,3 | tr -d \"` | tar -zx | rm scmpuff*.tar* | mv scmpuff_*/scmpuff ~/.bin/
