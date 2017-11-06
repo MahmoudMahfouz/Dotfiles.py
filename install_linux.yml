@@ -2,8 +2,8 @@ main:
   # Use it as global variables they are prepended with every install
   commands:
   - export dotfiles_path=$HOME/.dotfiles
-  - export nvm_path=$HOME/.nvm
   - export pyenv_path=$HOME/.pyenv
+  - export nodenv_path=$HOME/.nodenv
   - export rbenv_path=$HOME/.rbenv
   - export vim_path=$dotfiles_path/.vim
   - sudo apt-get update
@@ -55,16 +55,13 @@ installs:
       editor: vim
 
   nvm:
+    .exports:
+    - export PATH="$nodenv_path/bin:$PATH"
     .bashrc:
-    - source "$nvm_path/nvm.sh"
+    - source $nodenv_path/bin/nodenv init
     commands:
-    - export version=0.11.0
-    - curl https://raw.githubusercontent.com/creationix/nvm/v0.22.0/install.sh | NVM_DIR=$nvm_path bash
-    - source $nvm_path/nvm.sh
-    - nvm install stable
-    - nvm install $version
-    - nvm use $version
-    - nvm alias default $version
+    - git clone https://github.com/nodenv/nodenv.git $nodenv_path
+    - git clone https://github.com/nodenv/node-build.git && cd node-build && ./install.sh
 
   rbenv:
     .exports:
