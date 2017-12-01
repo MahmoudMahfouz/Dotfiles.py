@@ -1,44 +1,37 @@
-ack
 ant
-build-essentials
+build-dep
+build-essential
 cmake
 coreutils
-ctags-exuberant
-docker.io && sudo gpasswd -a $USER docker && newgrp docker
+curl
+docker.io && sudo adduser $USER docker
+exuberant-ctags
 gcc
-golang
 grc
 htop
 iftop
-ipython
 imagemagick
 iotop
+ipython
 jq
-moreutils && sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo add-apt-repo
-sitory -y ppa:aacebedo/fasd && sudo apt-get update && sudo apt-get install -y neovim fasd
-openssl
-reattach-to-user-namespace
-scmpuff
-silversearcher-ag
-make
-build-essential
-libssl-dev
-zlib1g-dev
 libbz2-dev
-libreadline-dev
-libsqlite3-dev
-wget
-curl
-llvm
 libncurses5-dev
 libncursesw5-dev
-xz-utils
-tk-dev
-build-dep
-python-psycopg2
-libxmlsec1-dev
-libxml2-dev
-libxslt1-dev
-libxslt
+libreadline-dev
+libsqlite3-dev
+libssl-dev
 libxml2
+libxml2-dev
+libxmlsec1-dev
+libxslt1-dev
+llvm
+make
+moreutils && sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo add-apt-repository -y ppa:aacebedo/fasd && sudo apt update && sudo apt install -y neovim fasd
+openssl
+python-psycopg2
+silversearcher-ag
 software-properties-common
+tk-dev
+wget
+xz-utils
+zlib1g-dev

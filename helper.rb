@@ -127,6 +127,7 @@ class Helper
     extra_packages.each do |line|
       next if line.start_with? "#"
       cmd = extra['command'] + ' ' + line
+      print cmd
       %x[#{cmd}]
     end
   end
