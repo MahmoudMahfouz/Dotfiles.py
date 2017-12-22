@@ -1,3 +1,7 @@
+add_keys() {
+   ssh-add -D && ssh-add ~/.ssh/$1/* && ssh-add
+}
+
 hey_bastions() {
   open_ssh_to_bastions $1 ~/.ssh/id_ed25519 mahmoud
 }
@@ -19,6 +23,7 @@ open_ssh_to_bastions() {
     arr=(${(ps:/:)${i}})
     unsetopt sh_word_split
     i=$arr[1]
+    ssh-add -D && ssh-add ~/.ssh/id_ed25519 && ssh-add ~/.ssh/$i/*
     times=$arr[2]
 
     if [ -z "$arr[2]" ]; then
