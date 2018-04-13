@@ -2,7 +2,7 @@ main:
   # Use it as global variables they are prepended with every install
   commands:
   - export dotfiles_path=$HOME/.dotfiles
-  - export nvm_path=$HOME/.nvm
+  - export nodenv_path=$HOME/.nodenv
   - export pyenv_path=$HOME/.pyenv
   - export rbenv_path=$HOME/.rbenv
   - export vim_path=$dotfiles_path/.vim
@@ -23,7 +23,7 @@ main:
       command: gem install
       file: extras/gemfile
     npm(s):
-      command: source $nvm_path/nvm.sh && npm i -g
+      command: source $nodenv_path/nodenv.sh && npm i -g
       file: extras/npmfile
     pip(s):
       command: pip install
@@ -58,17 +58,13 @@ installs:
       email: mahmoud.mahfouz.zaza@gmail.com
       editor: vim
 
-  nvm:
+  nodenv:
     .zshrc:
-    - source "$nvm_path/nvm.sh"
+    - eval "$(nodenv init -)"
     commands:
     - export version=0.11.0
-    - curl https://raw.githubusercontent.com/creationix/nvm/v0.22.0/install.sh | NVM_DIR=$nvm_path bash
-    - source $nvm_path/nvm.sh
-    - nvm install stable
-    - nvm install $version
-    - nvm use $version
-    - nvm alias default $version
+    - brew install nodenv
+    - nodenv init && nodenv install $version
 
   rbenv:
     .exports:
