@@ -2,9 +2,6 @@ main:
   # Use it as global variables they are prepended with every install
   commands:
   - export dotfiles_path=$HOME/.dotfiles
-  - export pyenv_path=$HOME/.pyenv
-  - export nodenv_path=$HOME/.nodenv
-  - export rbenv_path=$HOME/.rbenv
   - export vim_path=$dotfiles_path/.vim
   - sudo apt-get update
   options:
@@ -53,42 +50,6 @@ installs:
       name: Mahmoud Mahfouz
       email: mahmoud.mahfouz.zaza@gmail.com
       editor: vim
-
-  nodenv:
-    .exports:
-    - export nodenv_path=$nodenv_path
-    - export PATH="$nodenv_path/bin:$PATH"
-    .bashrc:
-    - eval "$(nodenv init -)"
-    commands:
-    - export version=8.9.0
-    - git clone https://github.com/nodenv/nodenv.git $nodenv_path
-    - git clone https://github.com/nodenv/node-build.git $nodenv_path/plugins/node-build
-    - export nodenv_path=$nodenv_path && export PATH=$nodenv_path/bin:$PATH && nodenv install $version && nodenv global $version
-
-  rbenv:
-    .exports:
-    - export rbenv_path=$rbenv_path
-    .bashrc:
-    - eval "$(rbenv init -)"
-    commands:
-    - export version=2.4.2
-    - git clone https://github.com/sstephenson/rbenv.git $rbenv_path
-    - git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-    - export rbenv_path=$rbenv_path && export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH && rbenv install $version && rbenv global $version
-
-  pyenv:
-    .exports:
-    - export PYENV_ROOT=$pyenv_path
-    - export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
-    .bashrc:
-    - eval "$(pyenv init -)"
-    - echo 'eval "$(pyenv virtualenv-init -)"'
-    commands:
-    - export version=3.6.2
-    - if [ ! -d $pyenv_path ]; then git clone git://github.com/yyuu/pyenv.git $pyenv_path; fi
-    - export PYENV_ROOT=$pyenv_path && export PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH && pyenv install $version && pyenv rehash && pyenv global $version
-    - git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 
   terminal:
     .files:
