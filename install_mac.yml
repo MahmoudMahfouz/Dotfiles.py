@@ -4,18 +4,18 @@ main:
   - export dotfiles_path=$HOME/.dotfiles
   - export vim_path=$dotfiles_path/.vim
   options:
-    execute: false
+    execute: true
     vim_path: $dotfiles_path/.vim
 
   extras:
-    # Brew package(s):
-    #   command: brew install
-    #   file: extras/brewfile
-    # Cask program(s):
-    #   command: brew cask install
-    #   file: extras/caskfile
-    # Defaults settings (Mac OSX):
-    #   file: extras/defaultsfile
+    Brew package(s):
+      command: brew install
+      file: extras/brewfile
+    Cask program(s):
+      command: brew cask install
+      file: extras/caskfile
+    Defaults settings (Mac OSX):
+      file: extras/defaultsfile
     Gem(s):
       command: gem install
       file: extras/gemfile
@@ -38,9 +38,14 @@ installs:
       tmux-conf:
         path: general/tmux.conf
         sym: ~/
-    # commands:
+    .zshrc:
+    - . $HOME/.asdf/asdf.sh
+    - . $HOME/.asdf/completions/asdf.bash
+    commands:
     # - xcode-select --install
-    # - ruby -e $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+    - yes '' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # - rm -rf ~/.asdf || true
+    - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
 
   git:
     .files:
@@ -55,13 +60,18 @@ installs:
       email: mahmoud.mahfouz.zaza@gmail.com
       editor: vim
 
-  asdf:
-    .zshrc:
-    - \n. $HOME/.asdf/asdf.sh
-    - \n. $HOME/.asdf/completions/asdf.bash
+  asdf-golang:
     commands:
-    - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
-    - . $HOME/.asdf/asdf.sh && asdf plugin-add golang && asdf plugin-add python && asdf plugin-add ruby && asdf plugin-add nodejs && asdf plugin-add nodejs && asdf install ruby 2.4.1 && asdf install python 3.6.5 && asdf install python 2.7.15 && asdf install nodejs 7.6.0 && asdf install golang 1.10.2
+    - . $HOME/.asdf/asdf.sh && asdf plugin-add golang && asdf install golang 1.10.2 && asdf global golang 1.10.2
+  asdf-ruby:
+    commands:
+    - . $HOME/.asdf/asdf.sh && asdf plugin-add ruby && asdf install ruby 2.4.1 && asdf global ruby 2.4.1
+  asdf-nodejs:
+    commands:
+    - . $HOME/.asdf/asdf.sh && asdf plugin-add nodejs && asdf install nodejs 7.6.0 && asdf global nodejs 7.6.0
+  asdf-python:
+    commands:
+    - . $HOME/.asdf/asdf.sh && asdf plugin-add python && asdf install python 3.6.5 && asdf install python 2.7.15 && asdf global python 3.6.5
 
   terminal:
     .files:

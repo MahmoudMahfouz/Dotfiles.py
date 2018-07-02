@@ -7,7 +7,7 @@ ctags-exuberant
 fasd
 gcc
 git
-go
+gpg
 grc
 htop
 iftop
@@ -19,7 +19,6 @@ moreutils
 mtop
 neovim
 install openssl && brew link --force openssl
-pyenv-virtualenv
 reattach-to-user-namespace
 scmpuff
 the_silver_searcher
