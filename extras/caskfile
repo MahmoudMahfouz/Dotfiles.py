@@ -1,14 +1,12 @@
-adobe-illustrator-cc
-adobe-photoshop-cc
 adobe-photoshop-lightroom
 alfred
 # android-studio
 appcleaner
+Atom
 balsamiq-mockups
 caffeine
 calibre
 cheatsheet
-chefdk
 day-o
 disk-inventory-x
 docker
@@ -21,18 +19,17 @@ flux
 gas-mask
 # genymotion
 google-chrome
-google-drive
-google-earth
 google-earth-web-plugin
-google-photos-backup
+Google-photos-backup-and-sync
 # intellij-idea-ce
 istat-menus
+Iterm2
 java
 karabiner
-limechat
 macdown
 meld
-mongo-management-studio
+Megasync
+# mongo-management-studio
 karabiner-elements
 mysqlworkbench
 onyx
@@ -46,11 +43,9 @@ skype
 slack
 spectacle
 spotify
-sublime-text3
 textual
-toolbox
 torbrowser
-utorrent
+Transmission
 vagrant
 virtualbox
 vlc

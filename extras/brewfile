@@ -1,6 +1,5 @@
 ack
 ant
-Caskroom/cask/java Caskroom/cask/xquartz
 cmake
 coreutils
 ctags-exuberant
