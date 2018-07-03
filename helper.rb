@@ -126,8 +126,8 @@ class Helper
     extra_packages = f.read.split("\n")
     extra_packages.each do |line|
       next if line.start_with? "#"
+      next if line.to_s.empty?
       cmd = extra['command'] + ' ' + line
-      print cmd
       %x[#{cmd}]
     end
   end

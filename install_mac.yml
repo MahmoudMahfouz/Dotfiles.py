@@ -15,6 +15,7 @@ main:
       command: brew cask install
       file: extras/caskfile
     Defaults settings (Mac OSX):
+      command: defaults write
       file: extras/defaultsfile
     Gem(s):
       command: gem install
@@ -143,5 +144,4 @@ installs:
     - git clone https://github.com/KuoE0/oh-my-zsh-solarized-powerline-theme.git solarized-powerline
     - cd solarized-powerline
     - ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
-    - cd ~/Library/Fonts && curl -fLo InconsolataPowerlineNerdfonts.otf https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Inconsolata/complete/Inconsolata%20Nerd%20Font%20Complete%20Mono.otf
     - cd $ZSH/ && git clone https://github.com/tarjoilija/zgen.git

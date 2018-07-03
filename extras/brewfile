@@ -11,13 +11,10 @@ grc
 htop
 iftop
 imagemagick
-iotop
-iterm2
 jq
 moreutils
-mtop
 neovim
-install openssl && brew link --force openssl
+openssl && brew link --force openssl
 reattach-to-user-namespace
 scmpuff
 the_silver_searcher
