@@ -1,27 +1,27 @@
 ## Important ##
 
-com.apple.appstore ShowDebugMenu -bool true;
-com.apple.appstore WebKitDeveloperExtras -bool true;
-com.apple.dashboard mcx-disabled -bool true;
-com.apple.desktopservices DSDontWriteNetworkStores -bool true;
-com.apple.dock autohide -bool true;
-com.apple.dock autohide-delay -float 0;
-com.apple.dock autohide-time-modifier -float 0;
-com.apple.dock enable-spring-load-actions-on-all-items -bool true;
-com.apple.dock minimize-to-application -bool true;
-com.apple.dock show-process-indicators -bool true;
-com.apple.dock showhidden -bool true;
-com.apple.finder FXDefaultSearchScope -string "SCcf";
-com.apple.finder QuitMenuItem -bool true;
-com.apple.finder ShowPathbar -bool true;
-com.apple.LaunchServices LSQuarantine -bool false;
+com.apple.appstore ShowDebugMenu -bool true
+com.apple.appstore WebKitDeveloperExtras -bool true
+com.apple.dashboard mcx-disabled -bool true
+com.apple.desktopservices DSDontWriteNetworkStores -bool true
+com.apple.dock autohide -bool true
+com.apple.dock autohide-delay -float 0
+com.apple.dock autohide-time-modifier -float 0
+com.apple.dock enable-spring-load-actions-on-all-items -bool true
+com.apple.dock minimize-to-application -bool true
+com.apple.dock show-process-indicators -bool true
+com.apple.dock showhidden -bool true
+com.apple.finder FXDefaultSearchScope -string "SCcf"
+com.apple.finder QuitMenuItem -bool true
+com.apple.finder ShowPathbar -bool true
+com.apple.LaunchServices LSQuarantine -bool false
 com.apple.universalaccess closeViewScrollWheelToggle -bool true
-com.apple.universalaccess HIDScrollZoomModifierMask -int 262144;
-NSGlobalDomain ApplePressAndHoldEnabled -bool false;
-NSGlobalDomain com.apple.springing.enabled -bool true;
-NSGlobalDomain KeyRepeat -int 0;
-NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false;
-NSGlobalDomain NSDisableAutomaticTermination -bool true;
+com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+NSGlobalDomain ApplePressAndHoldEnabled -bool false
+NSGlobalDomain com.apple.springing.enabled -bool true
+NSGlobalDomain KeyRepeat -int 0
+NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+NSGlobalDomain NSDisableAutomaticTermination -bool true
 # sudo systemsetup -setrestartfreeze on;
 
 

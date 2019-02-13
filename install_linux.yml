@@ -41,12 +41,12 @@ installs:
   git:
     .files:
       gitconfig:
-        path: git/gitconfig.erb
+        path: git/gitconfig.mako
         sym: ~/
       gitignore:
         path: git/gitignore
         sym: ~/
-    erb_vars:
+    template_vars:
       name: Mahmoud Mahfouz
       email: mahmoud.mahfouz.zaza@gmail.com
       editor: vim
@@ -84,12 +84,12 @@ installs:
         path: tmuxinator/portrait.yml
         sym: ~/.tmuxinator/
   vim:
-    .files: # will use erb_vars from the current object
+    .files: # will use template_vars from the current object
       vimrc:
-        path: vim/vimrc.erb
+        path: vim/vimrc.mako
         sym: ~/
       vim-settings:
-        path: vim/vim-settings.erb
+        path: vim/vim-settings.mako
         sym: ~/.dotfiles
     .exports:
     - export vim_path=$vim_path
@@ -97,7 +97,7 @@ installs:
     commands:
     - if [ -e $vim_path/bundle ]; then rm -rf $vim_path/bundle; fi
     - git clone https://github.com/gmarik/Vundle.vim.git $vim_path/bundle/Vundle.vim
-    erb_vars:
+    template_vars:
       vim_path: $dotfiles_path/.vim
       dotfiles_path: $dotfiles_path
 

@@ -1,5 +1,9 @@
-cassandra-driver
-cql
+# cassandra-driver
+# cql
+flake8
 neovim
 psutil
 powerline-status
+pynvim
+pyyaml
+pyinstaller

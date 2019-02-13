@@ -1,4 +1,4 @@
-# Dotfiles.rb
+# Dotfiles.py
 Having a good dotfiles is a must for every Developer. It can save us days and even weeks of reconfiguring our machine in case of OS crash
 or even migrating to a new machine.
 
@@ -7,8 +7,9 @@ and we all need our own modifications and customizations. Customizing your dotfi
 
 ## How to use it:
 1. Clone the repo
-2. run `ruby install.rb`
-3. Done !
+2. `pip3 install -r requirements.txt`
+3. run `python3 install.rb -e -c`
+4. Done !
 
 ## How to configure it:
 The main part of the dotfiles is the `install.yml` file which will have all your configurations that you need.
@@ -19,9 +20,6 @@ main:
   # an array of commands to be prepended to every commands array in every package in the installs key useful for global exports
   commands:
   options:
-    # whether or not to execute shell commands
-    # useful when you want to change something in a rc file or a configuration and you just want to update the files (and it is very fast)
-    execute: true
   extras:
     [name]:
       command: # prefix every line with this option and execute
@@ -40,17 +38,17 @@ installs:
       [whatever]:
         path: # the path of the current file relative install.rb
         sym: # the final location of the symbolic link whether ~/ OR ~/my_new_dotfiles OR ~/anything
-      [whatever.erb]:
-        # the main difference is this is a template file that will use the erb_vars to generate the file
+      [whatever.mako]:
+        # the main difference is this is a template file that will use the template_vars to generate the file
         # the path of the current file relative install.rb
-        path: folder/file.erb
+        path: folder/file.mako
         sym: # the final location of the symbolic link whether ~/ OR ~/my_new_dotfiles OR ~/anything
 
     # similar to commands but themain difference is that it is persisted to .exports file
     .exports:
     - export ...
     - export ...
-    erb_vars:
+    template_vars:
       [git_name]: Mahmoud Mahfouz
 
     # will create a file having all the lines from all the [anything] tags in all the packages

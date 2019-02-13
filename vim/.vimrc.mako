@@ -1,0 +1,149 @@
+syntax on           " syntax highlighting
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=${vim_path}/bundle/Vundle.vim
+let path="${vim_path}/bundle"
+let mapleader = " "     " set leader key
+
+if has("autocmd")
+ augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc
+ augroup END
+endif
+
+call vundle#begin(path)
+" Vim on S3 directly!
+Plugin 'blp1526/storage.vim'
+" Vim + tmux
+Plugin 'christoomey/vim-tmux-navigator'
+" window swap  leader-yw leader-pw leader-ww
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'myusuf3/numbers.vim'
+
+" move easily around the buffer  keys: /, leader-h,l
+Plugin 'Lokaltog/vim-easymotion'
+
+"fuzzy file finder  ctrl-p | ctrl-k,j | ctrl-z (select or deselect) | ctrl-x,v,o
+Plugin 'ctrlpvim/ctrlp.vim'
+
+"git wrapper"
+Plugin 'tpope/vim-fugitive'
+"git gutter"
+Plugin 'airblade/vim-gitgutter'
+"gitk"
+Plugin 'gregsexton/gitv'
+"history graph" leader-ut
+Plugin 'mbbill/undotree'
+
+"Tags"
+Plugin 'szw/vim-tags'
+
+" Nerd tree  leader-nt
+Plugin 'scrooloose/nerdtree'
+
+"surround text with any text easily  cs[old surr][new surround]
+Plugin 'tpope/vim-surround'
+
+"Multiple cursors     ctrl-n,p,x
+Plugin 'terryma/vim-multiple-cursors'
+
+" searcher  /f (find current word) leader-/ (find in files)
+Plugin 'rking/ag.vim'
+
+" Tagbar  leader-tb
+Plugin 'majutsushi/tagbar'
+
+" Commenting  gc,gcc
+Plugin 'tpope/vim-commentary'
+
+"open browser"
+Plugin 'tyru/open-browser.vim'
+
+"greplace across multiple files interactively
+" Plugin 'greplace.vim'
+Plugin 'dkprice/vim-easygrep'
+
+" Snippit
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+"emmet"
+Plugin 'mattn/emmet-vim'
+
+"indent level guide"
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'editorconfig/editorconfig-vim'
+
+"indent for python"
+Plugin 'vim-scripts/indentpython.vim'
+
+" add end word in rails function and other languages"
+Plugin 'tpope/vim-endwise'
+
+" auto close quote, brackets, ..
+Plugin 'Raimondi/delimitMate'
+
+" useful for indenting css files"
+Plugin 'godlygeek/tabular'
+
+"highlight matching html tab"
+Plugin 'gregsexton/MatchTag'
+
+" all vim color schemes"
+Plugin 'xolox/vim-misc'
+" color scheme switcher F8, Shift+F8"
+Plugin 'xolox/vim-colorscheme-switcher'
+"Schemes
+Plugin 'rakr/vim-one'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
+Plugin 'sickill/vim-monokai'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'NSBrianWard/Glacier-Remixes', {'rtp':'vim/'}
+Plugin 'trevorrjohn/vim-obsidian'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ajh17/Spacegray.vim'
+Plugin 'mhallendal/spacedust-theme', {'rtp':'vim/'}
+Plugin 'jnurmine/Zenburn'
+Plugin 'morhetz/gruvbox'
+
+" Icons
+Plugin 'ryanoasis/vim-devicons'
+
+" Lines
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+
+" sessions
+Plugin 'xolox/vim-session'
+
+" Completion & Linting
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/ListToggle'
+Plugin 'scrooloose/syntastic'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'nvie/vim-flake8'
+
+"""" Languages support """"
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-haml' "and sass
+Plugin 'othree/html5.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'klen/python-mode'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
+Plugin 'mxw/vim-jsx'
+Plugin 'burnettk/vim-angular'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'tpope/vim-rails'
+
+Plugin 'michalliu/sourcebeautify.vim'
+call vundle#end()
+filetype plugin indent on    " required
+source ${dotfiles_path}/.vim-settings
