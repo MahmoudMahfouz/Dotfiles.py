@@ -46,7 +46,11 @@ installs:
     - xcode-select --install
       # - sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
       # - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
+    - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.3
+    - curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/darwin/amd64/aws-iam-authenticator
+    - chmod +x ./aws-iam-authenticator
+    - mkdir -p $HOME/bin
+    - mv ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
 
   git:
     .files:
@@ -99,6 +103,7 @@ installs:
     - export PATH=/usr/local/sbin:/usr/local/bin:$PATH
     - export PATH=$rbenv_path/shims:$rbenv_path/bin:$PATH
     - export PATH=/opt/chefdk/bin:$PATH
+    - export PATH=$HOME/bin:$PATH
 
   tmuxinator:
     .files:
@@ -150,9 +155,3 @@ installs:
     - cd solarized-powerline
     - ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
     - cd $ZSH/ && git clone https://github.com/tarjoilija/zgen.git
-    - brew install kubernetes-cli
-    - curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/darwin/amd64/aws-iam-authenticator
-    - chmod +x ./aws-iam-authenticator
-    - mkdir -p $HOME/bin
-    - mv ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
-    - echo 'export PATH=$HOME/bin:$PATH' >> ~/.bash_profile
