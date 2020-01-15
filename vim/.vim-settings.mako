@@ -24,6 +24,8 @@ set shiftwidth=2
 set shiftround
 set expandtab
 set backspace=2 " make backspace work like most other apps"
+" shift + tab = real tab"
+inoremap <S-Tab> <C-V><Tab>
 
 "Write the old file out when switching between files.
 set autowrite
