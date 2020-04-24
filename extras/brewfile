@@ -7,18 +7,24 @@ fasd
 gcc
 git
 gpg
+graphviz
 grc
 htop
 iftop
 imagemagick
 jq
+kustomize
 moreutils
 neovim
 openssl && brew link --force openssl
 reattach-to-user-namespace
 scmpuff
+skaffold
+terraform
 the_silver_searcher
 tmux
 tmux-mem-cpu-load
+tree
 vim
 wget
+zsh
